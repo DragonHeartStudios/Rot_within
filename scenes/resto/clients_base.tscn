@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://bn1qhoayjfc2i"]
+
+[ext_resource type="Texture2D" uid="uid://bwhrkjrwksvco" path="res://{BD3BFF27-E340-409D-B58C-71062B00B608}.png" id="1_1dxpg"]
+[ext_resource type="Script" uid="uid://cxfpqbmxgo2jx" path="res://scripts/resto/clients_base.gd" id="2_osrx8"]
+[ext_resource type="Texture2D" uid="uid://bgxxl5w0ojj55" path="res://{BDAB1D60-F0EA-4FD9-9D94-E3C44001C54D}.png" id="3_2ele5"]
+[ext_resource type="Theme" uid="uid://dvc1dki2baxnc" path="res://resources/themes/globale.tres" id="4_osrx8"]
+[ext_resource type="AudioStream" uid="uid://b44n4wlqd8ur0" path="res://assets/audio/sfx/Notification Bell Sound Effect ( By Ashish Editz )_01.mp3" id="5_2ele5"]
+[ext_resource type="AudioStream" uid="uid://cxk51pyl0ck8h" path="res://assets/audio/sfx/NOTIF_ERREUR-2.mp3" id="6_p744p"]
+[ext_resource type="AudioStream" uid="uid://bfd58p1ytt2dv" path="res://assets/audio/sfx/NOTIF_ERREUR.mp3" id="7_003ye"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_glv1o"]
+blend_mode = 3
+
+[sub_resource type="Gradient" id="Gradient_eq8i8"]
+offsets = PackedFloat32Array(0.25142857, 0.26857144, 0.69142854, 0.70285714)
+colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_apv1r"]
+gradient = SubResource("Gradient_eq8i8")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_417uq"]
+offsets = PackedFloat32Array(0.25142857, 0.26857144, 0.69142854, 0.70285714)
+colors = PackedColorArray(1, 1, 1, 0, 0.16078432, 0.4509804, 0, 1, 0.16099891, 0.45214123, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3fn6y"]
+gradient = SubResource("Gradient_417uq")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_1dxpg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bull:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_osrx8"]
+resource_name = "new_animation"
+length = 8.0
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bull:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.5, 7.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ele5"]
+_data = {
+&"RESET": SubResource("Animation_1dxpg"),
+&"new_animation": SubResource("Animation_osrx8")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_at3vo"]
+random_pitch = 1.0775464
+random_volume_offset_db = 1.44
+streams_count = 2
+stream_0/stream = ExtResource("6_p744p")
+stream_1/stream = ExtResource("7_003ye")
+
+[node name="clients_base" type="TextureRect" unique_id=2035031765]
+material = SubResource("CanvasItemMaterial_glv1o")
+size_flags_vertical = 8
+texture = ExtResource("1_1dxpg")
+stretch_mode = 2
+script = ExtResource("2_osrx8")
+vitesse_timer = 3.0
+
+[node name="nom" type="Label" parent="." unique_id=863387304]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.5
+offset_top = 11.0
+offset_right = 59.5
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+text = "Elias"
+horizontal_alignment = 1
+
+[node name="bull" type="TextureRect" parent="." unique_id=995406691]
+z_index = -6
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 28.5
+offset_top = -104.0
+offset_right = 243.5
+offset_bottom = 37.0
+grow_horizontal = 2
+texture = ExtResource("3_2ele5")
+
+[node name="LB_command" type="Label" parent="bull" unique_id=635939040]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 4.5
+offset_right = 38.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_osrx8")
+theme_override_colors/font_color = Color(0.86, 0.7883333, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "a burger pls"
+
+[node name="timer" type="TextureProgressBar" parent="." unique_id=70877897]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_top = -45.0
+offset_right = 1.5
+offset_bottom = 19.0
+grow_horizontal = 2
+fill_mode = 4
+texture_under = SubResource("GradientTexture2D_apv1r")
+texture_progress = SubResource("GradientTexture2D_3fn6y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=153864313]
+libraries/ = SubResource("AnimationLibrary_2ele5")
+autoplay = &"new_animation"
+
+[node name="arriver" type="AudioStreamPlayer" parent="." unique_id=503116613]
+stream = ExtResource("5_2ele5")
+volume_db = -20.0
+autoplay = true
+
+[node name="départe" type="AudioStreamPlayer" parent="." unique_id=1251702776]
+stream = SubResource("AudioStreamRandomizer_at3vo")
+volume_db = -20.0

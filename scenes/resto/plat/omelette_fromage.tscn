@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cv3s8ls1g3qy1"]
+
+[ext_resource type="Texture2D" uid="uid://dlj5o8atybmyo" path="res://assets/sprites/ingredient/baguette.png" id="1_rkmyc"]
+[ext_resource type="Script" uid="uid://d1vq2e1t4lb3d" path="res://scripts/resto/obj.gd" id="2_bc3ps"]
+
+[node name="omelette_fromage" type="TextureRect" unique_id=976596502 groups=["omelette_fromage"]]
+modulate = Color(0, 1, 0.4000001, 1)
+offset_right = 43.0
+offset_bottom = 45.0
+texture = ExtResource("1_rkmyc")
+script = ExtResource("2_bc3ps")

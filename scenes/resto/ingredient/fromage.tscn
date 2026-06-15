@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://3t27qqfntil6"]
+
+[ext_resource type="Texture2D" uid="uid://cyps2w2glm5m2" path="res://assets/sprites/ingredient/Fromage.png" id="1_eu85v"]
+[ext_resource type="Script" uid="uid://d1vq2e1t4lb3d" path="res://scripts/resto/obj.gd" id="2_tpox7"]
+
+[node name="fromage" type="TextureRect" unique_id=1234855253 groups=["fromage"]]
+z_index = 11
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+texture = ExtResource("1_eu85v")
+expand_mode = 1
+script = ExtResource("2_tpox7")

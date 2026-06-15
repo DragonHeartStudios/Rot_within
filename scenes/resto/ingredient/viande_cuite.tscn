@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dun5qbsotorqy"]
+
+[ext_resource type="Texture2D" uid="uid://dr28tfr7o0cs0" path="res://assets/sprites/ingredient/Viande cuite.png" id="1_scmyo"]
+[ext_resource type="Script" uid="uid://d1vq2e1t4lb3d" path="res://scripts/resto/obj.gd" id="2_f1485"]
+
+[node name="viande_cuite" type="TextureRect" unique_id=1234855253 groups=["viande_cuite"]]
+z_index = 11
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+texture = ExtResource("1_scmyo")
+expand_mode = 1
+script = ExtResource("2_f1485")

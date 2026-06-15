@@ -1,0 +1,628 @@
+[gd_scene format=3 uid="uid://dbgdxasteqn0l"]
+
+[ext_resource type="Texture2D" uid="uid://cyr1rfbi1wjbn" path="res://{BB6807B0-BAC5-4E42-B92C-CB65DBEDBEE0}.png" id="1_eq8i8"]
+[ext_resource type="Script" uid="uid://dj8sd0540teid" path="res://scripts/resto/resto.gd" id="1_h8o57"]
+[ext_resource type="Script" uid="uid://dh24t5ohy5l2b" path="res://scripts/resto/planche_grid.gd" id="2_3fn6y"]
+[ext_resource type="Texture2D" uid="uid://bew3iwy10wc3t" path="res://{D5F3FE12-5121-4A31-B751-7A7A03D40C01}.png" id="2_apv1r"]
+[ext_resource type="Script" uid="uid://df8y2ku43ssxn" path="res://scripts/resto/slot.gd" id="3_3fn6y"]
+[ext_resource type="Texture2D" uid="uid://dlicdb8l3wqcb" path="res://assets/sprites/ingredient/Tomates.png" id="5_3fn6y"]
+[ext_resource type="StyleBox" uid="uid://d2ean8r6b5gf1" path="res://resources/themes/panel_box_flat.tres" id="5_n7uw1"]
+[ext_resource type="PackedScene" uid="uid://3t27qqfntil6" path="res://scenes/resto/ingredient/fromage.tscn" id="6_cegy2"]
+[ext_resource type="PackedScene" uid="uid://ddrxg80ebncq4" path="res://scenes/resto/ingredient/tomate.tscn" id="6_glv1o"]
+[ext_resource type="PackedScene" uid="uid://wvbnlqyu3oqn" path="res://scenes/resto/ingredient/oeuf.tscn" id="8_011j2"]
+[ext_resource type="Script" uid="uid://duu3lfosgr5sn" path="res://scripts/resto/ClientsManager.gd" id="8_xpygi"]
+[ext_resource type="PackedScene" uid="uid://dun5qbsotorqy" path="res://scenes/resto/ingredient/viande_cuite.tscn" id="9_s5hcb"]
+[ext_resource type="PackedScene" uid="uid://ucmywbupgqg6" path="res://scenes/resto/ingredient/pain_burger.tscn" id="10_846kg"]
+[ext_resource type="Script" uid="uid://duwbtunkgpe7x" path="res://scripts/resto/cook.gd" id="10_jjykn"]
+[ext_resource type="PackedScene" uid="uid://dqx0vo6hpnw5f" path="res://scenes/resto/ingredient/salade.tscn" id="11_b0cgc"]
+[ext_resource type="Script" uid="uid://byrkae7wpxiyj" path="res://scripts/resto/shop.gd" id="11_xfph7"]
+[ext_resource type="Texture2D" uid="uid://xlsf177q31ju" path="res://—Pngtree—cartoon simple dustbin decoration material_7097391.png" id="11_xpygi"]
+[ext_resource type="PackedScene" uid="uid://bker7h7fr0ygj" path="res://scenes/resto/ingredient/concombre.tscn" id="12_011j2"]
+[ext_resource type="Script" uid="uid://cxr64hfxbnhya" path="res://scripts/resto/poubelle.gd" id="12_888f3"]
+[ext_resource type="PackedScene" uid="uid://cuwajvqypuyht" path="res://scenes/resto/ingredient/baguette.tscn" id="13_s5hcb"]
+[ext_resource type="Script" uid="uid://dlrb2xbm0bvdf" path="res://scripts/resto/ouvrire_shop.gd" id="15_g64yn"]
+[ext_resource type="Theme" uid="uid://dvc1dki2baxnc" path="res://resources/themes/globale.tres" id="19_b0cgc"]
+[ext_resource type="Texture2D" uid="uid://dlj5o8atybmyo" path="res://assets/sprites/ingredient/baguette.png" id="20_g64yn"]
+[ext_resource type="Script" uid="uid://beakaeqrnq3nd" path="res://scripts/resto/shop_close.gd" id="22_ulrc0"]
+[ext_resource type="Texture2D" uid="uid://2ddg7h8noelf" path="res://assets/sprites/ingredient/Œuf.png" id="22_vyomc"]
+[ext_resource type="Texture2D" uid="uid://c0oceab3x0l5n" path="res://assets/sprites/ingredient/Salade.png" id="24_n7uw1"]
+[ext_resource type="Texture2D" uid="uid://cyps2w2glm5m2" path="res://assets/sprites/ingredient/Fromage.png" id="25_8bi4g"]
+[ext_resource type="Texture2D" uid="uid://cn1q2ufovatd0" path="res://assets/sprites/ingredient/Pain burger.png" id="26_8kw7o"]
+[ext_resource type="Texture2D" uid="uid://0juxw6y3fk1p" path="res://assets/sprites/ingredient/Concombre.png" id="27_vfwnw"]
+[ext_resource type="Texture2D" uid="uid://dr28tfr7o0cs0" path="res://assets/sprites/ingredient/Viande cuite.png" id="28_b8xja"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xpygi"]
+blend_mode = 3
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_888f3"]
+blend_mode = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bi4g"]
+bg_color = Color(0, 0, 0, 0.5686275)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="resto" type="Control" unique_id=1258453009]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_h8o57")
+
+[node name="cuissine" type="ColorRect" parent="." unique_id=1883744128]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -345.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.44800055, 0.3570492, 0.23593497, 1)
+
+[node name="bg" type="ColorRect" parent="." unique_id=1728345728]
+z_index = -22
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -662.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.41946664, 0.44, 0.264, 1)
+
+[node name="planche" type="TextureRect" parent="." unique_id=199749557]
+material = SubResource("CanvasItemMaterial_xpygi")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -238.0
+offset_right = 113.26538
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_eq8i8")
+expand_mode = 1
+script = ExtResource("2_3fn6y")
+
+[node name="PlancheGrid" type="GridContainer" parent="planche" unique_id=1492708466]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = 48.0
+offset_right = -93.26538
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="livre" type="TextureRect" parent="." unique_id=258091595]
+material = SubResource("CanvasItemMaterial_888f3")
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -204.0
+offset_right = 258.6446
+offset_bottom = -45.0
+grow_vertical = 0
+texture = ExtResource("2_apv1r")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="livre" unique_id=1936536503]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "recettes"
+horizontal_alignment = 1
+
+[node name="nourriture" type="PanelContainer" parent="." unique_id=1608357413]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -210.0
+offset_right = -24.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_n7uw1")
+
+[node name="Label" type="Label" parent="nourriture" unique_id=1235786995]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 17
+text = "Food"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="nourriture" unique_id=1336149543]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="inventaire" type="GridContainer" parent="nourriture/MarginContainer" unique_id=2009156863]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+columns = 6
+
+[node name="Panel1" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=2145849963]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel2" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=713484853]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel3" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=15484104]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel4" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=488305607]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel5" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=357500737]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel6" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=909928645]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel7" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=621528577]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel8" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=279195975]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel9" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=1187248749]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel10" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=266246392]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel11" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=685155162]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel12" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=987496730]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel13" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=1841905068]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel14" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=1376039466]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel15" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=189544997]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel16" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=2080731288]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel17" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=1969871993]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel18" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=1232437028]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel19" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=1006039676]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel20" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=1429455590]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel21" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=1391058752]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel22" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=1771071520]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel23" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=931064274]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="Panel24" type="Panel" parent="nourriture/MarginContainer/inventaire" unique_id=1021787545]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bi4g")
+script = ExtResource("3_3fn6y")
+
+[node name="MarginContainer" type="MarginContainer" parent="nourriture/MarginContainer" unique_id=1821515033]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 113
+
+[node name="clients" type="Control" parent="." unique_id=1403484750]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 154.0
+offset_right = -211.0
+offset_bottom = -297.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_xpygi")
+temps_verification = 3.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="clients" unique_id=161104742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = 67.0
+offset_right = 92.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 126
+
+[node name="renplire_frigo" type="Button" parent="." unique_id=1429744651]
+layout_mode = 0
+offset_left = 923.0
+offset_top = 394.0
+offset_right = 1103.0
+offset_bottom = 425.0
+text = "open shop"
+script = ExtResource("15_g64yn")
+
+[node name="cook" type="Button" parent="." unique_id=467007610]
+layout_mode = 0
+offset_left = 613.0
+offset_top = 502.0
+offset_right = 717.0
+offset_bottom = 533.0
+text = "cook"
+script = ExtResource("10_jjykn")
+
+[node name="Poubelle" type="TextureRect" parent="." unique_id=408155749]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27800003
+anchor_top = 0.86
+anchor_right = 0.27800003
+anchor_bottom = 0.86
+offset_left = -46.756042
+offset_top = -47.78003
+offset_right = 46.243958
+offset_bottom = 45.21997
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_xpygi")
+expand_mode = 1
+script = ExtResource("12_888f3")
+
+[node name="Label" type="Label" parent="Poubelle" unique_id=187816608]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_right = 34.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Poubelle"
+horizontal_alignment = 1
+
+[node name="lb_argent" type="Label" parent="." unique_id=257488365]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = 39.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 43
+text = "9999€"
+
+[node name="shop" type="MarginContainer" parent="." unique_id=1066545537]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 230
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 230
+theme_override_constants/margin_bottom = 130
+
+[node name="PanelContainer" type="PanelContainer" parent="shop" unique_id=105677675]
+z_index = 20
+layout_mode = 2
+theme_override_styles/panel = ExtResource("5_n7uw1")
+
+[node name="Label" type="Label" parent="shop/PanelContainer" unique_id=1509546283]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 27
+text = "Shop"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="shop/PanelContainer" unique_id=549589018]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 59
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="shop/PanelContainer/MarginContainer" unique_id=1945712196]
+layout_mode = 2
+theme = ExtResource("19_b0cgc")
+theme_override_constants/h_separation = 29
+theme_override_constants/v_separation = 21
+columns = 3
+
+[node name="Label2" type="Label" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=1039258175]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "légumes"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="shop/PanelContainer/MarginContainer/GridContainer/Label2" unique_id=554083068]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label3" type="Label" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=329256593]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "produits animaux"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="shop/PanelContainer/MarginContainer/GridContainer/Label3" unique_id=647324806]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=970591731]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "pains"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="shop/PanelContainer/MarginContainer/GridContainer/Label" unique_id=805267490]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button1" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=2034036154]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("19_b0cgc")
+text = "+ viande 2.65$ "
+icon = ExtResource("5_3fn6y")
+script = ExtResource("11_xfph7")
+prix = 1.5
+item_a_ajouter = ExtResource("6_glv1o")
+
+[node name="Button2" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=547639145]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("19_b0cgc")
+text = "+  2.65$ "
+icon = ExtResource("22_vyomc")
+script = ExtResource("11_xfph7")
+prix = 0.99
+item_a_ajouter = ExtResource("8_011j2")
+
+[node name="Button3" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=432417873]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("19_b0cgc")
+text = "+ viande 2.65$ "
+icon = ExtResource("20_g64yn")
+script = ExtResource("11_xfph7")
+prix = 2.0
+item_a_ajouter = ExtResource("13_s5hcb")
+
+[node name="Button4" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=1232014191]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("19_b0cgc")
+text = "+ viande 2.65$ "
+icon = ExtResource("24_n7uw1")
+script = ExtResource("11_xfph7")
+prix = 2.5
+item_a_ajouter = ExtResource("11_b0cgc")
+
+[node name="Button5" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=2076212849]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("19_b0cgc")
+text = "+ viande 2.65$ "
+icon = ExtResource("25_8bi4g")
+script = ExtResource("11_xfph7")
+prix = 2.3
+item_a_ajouter = ExtResource("6_cegy2")
+
+[node name="Button6" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=208797990]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("19_b0cgc")
+text = "+ viande 2.65$ "
+icon = ExtResource("26_8kw7o")
+script = ExtResource("11_xfph7")
+prix = 1.5
+item_a_ajouter = ExtResource("10_846kg")
+
+[node name="Button7" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=162557300]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("19_b0cgc")
+text = "+ viande 2.65$ "
+icon = ExtResource("27_vfwnw")
+script = ExtResource("11_xfph7")
+prix = 2.15
+item_a_ajouter = ExtResource("12_011j2")
+
+[node name="Button8" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=858633622]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("19_b0cgc")
+text = "+ viande 2.65$ "
+icon = ExtResource("28_b8xja")
+script = ExtResource("11_xfph7")
+prix = 3.5
+item_a_ajouter = ExtResource("9_s5hcb")
+
+[node name="close" type="Button" parent="shop/PanelContainer/MarginContainer" unique_id=419684477]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("19_b0cgc")
+text = "close"
+script = ExtResource("22_ulrc0")
+
+[connection signal="pressed" from="renplire_frigo" to="renplire_frigo" method="_on_pressed"]
+[connection signal="pressed" from="cook" to="cook" method="_on_pressed"]
+[connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/Button1" to="shop/PanelContainer/MarginContainer/GridContainer/Button1" method="_on_pressed"]
+[connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/Button2" to="shop/PanelContainer/MarginContainer/GridContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/Button3" to="shop/PanelContainer/MarginContainer/GridContainer/Button3" method="_on_pressed"]
+[connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/Button4" to="shop/PanelContainer/MarginContainer/GridContainer/Button4" method="_on_pressed"]
+[connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/Button5" to="shop/PanelContainer/MarginContainer/GridContainer/Button5" method="_on_pressed"]
+[connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/Button6" to="shop/PanelContainer/MarginContainer/GridContainer/Button6" method="_on_pressed"]
+[connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/Button7" to="shop/PanelContainer/MarginContainer/GridContainer/Button7" method="_on_pressed"]
+[connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/Button8" to="shop/PanelContainer/MarginContainer/GridContainer/Button8" method="_on_pressed"]
+[connection signal="pressed" from="shop/PanelContainer/MarginContainer/close" to="shop/PanelContainer/MarginContainer/close" method="_on_pressed"]

@@ -14,9 +14,15 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="MyGodotTemplate"
+config/name="Wild-Jam-#94"
+run/main_scene="res://scenes/resto/resto.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/sprites/icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [file_customization]
 
@@ -25,3 +31,19 @@ folder_colors={
 "res://assets/": "teal",
 "res://resources/": "orange"
 }
+
+[global_group]
+
+burger=""
+tomate=""
+concombre=""
+salade=""
+fromage=""
+baguette=""
+oeuf=""
+sandwich=""
+viande_cuite=""
+viande_crue=""
+omelette_fromage=""
+pain_burger=""
+"salade mixte"=""
