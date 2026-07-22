@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bm0be3yueyyx"]
+
+[ext_resource type="Texture2D" uid="uid://wwc8ox1w7ru5" path="res://assets/sprites/UI/3977850.png" id="1_ond81"]
+[ext_resource type="Script" uid="uid://cq8wklg3o54m8" path="res://scripts/xp_container.gd" id="1_p11ts"]
+
+[node name="xpContainer" type="HBoxContainer" unique_id=1140490501]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 2
+script = ExtResource("1_p11ts")
+
+[node name="xp" type="Label" parent="." unique_id=421156310]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.083333254, 1, 0, 1)
+text = "3457"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2121820881]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_ond81")
+expand_mode = 1
+stretch_mode = 5

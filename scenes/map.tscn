@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dq5flnnffp78o"]
+
+[ext_resource type="Script" uid="uid://chc1bym4jmiv8" path="res://scripts/map.gd" id="1_paxxb"]
+[ext_resource type="Texture2D" uid="uid://b5hhkipbbstv5" path="res://assets/sprites/carte.png" id="2_paxxb"]
+
+[node name="map" type="Control" unique_id=671867917]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_paxxb")
+
+[node name="Map_sprite" type="TextureRect" parent="." unique_id=710005565]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 259.3413
+offset_bottom = 145.87952
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8137255, 0.8137255)
+mouse_filter = 0
+texture = ExtResource("2_paxxb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="close_map" type="Button" parent="." unique_id=668036698]
+layout_mode = 0
+offset_left = 969.0
+offset_top = 538.0
+offset_right = 1017.0
+offset_bottom = 569.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "close"
+
+[node name="appartement" type="Button" parent="." unique_id=531169152]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 264.0
+offset_right = 915.0
+offset_bottom = 295.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Appartment"
+
+[node name="resto" type="Button" parent="." unique_id=2118787605]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 199.0
+offset_right = 274.0
+offset_bottom = 230.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Restaurant"
+
+[connection signal="pressed" from="close_map" to="." method="_on_close_map_pressed"]
+[connection signal="pressed" from="appartement" to="." method="_on_appartement_pressed"]
+[connection signal="pressed" from="resto" to="." method="_on_resto_pressed"]

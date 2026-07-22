@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://1ooi32tfku88" path="res://assets/sprites/ingredient/Viande crue..png" id="1_cr4d4"]
 [ext_resource type="Script" uid="uid://d1vq2e1t4lb3d" path="res://scripts/resto/obj.gd" id="2_peuj5"]
 
-[node name="viande_crue" type="TextureRect" unique_id=1234855253 groups=["viande_crue"]]
+[node name="viande_crue" type="TextureRect" unique_id=1234855253 groups=["Raw Patty"]]
 z_index = 11
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+tooltip_text = "Raw Patty"
 mouse_filter = 0
 texture = ExtResource("1_cr4d4")
 expand_mode = 1

@@ -1,24 +1,10 @@
 [gd_resource type="Theme" format=3 uid="uid://dvc1dki2baxnc"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iebfo"]
-bg_color = Color(0.84, 0.7699999, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_left = 6.0
-expand_margin_top = 6.0
-expand_margin_right = 6.0
-expand_margin_bottom = 6.0
-shadow_color = Color(0, 0, 0, 0.61960787)
+[ext_resource type="FontFile" uid="uid://bljwc7bf8bvb" path="res://resources/fonts/static/Nunito-Bold.ttf" id="1_5v0su"]
+[ext_resource type="FontFile" uid="uid://c6cuumb84y7r6" path="res://resources/fonts/Nunito/static/Nunito-Black(2).ttf" id="2_k2pjq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwj52"]
-bg_color = Color(0.66, 0.605, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iebfo"]
+bg_color = Color(0.826, 0.84, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -28,14 +14,31 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-expand_margin_left = 3.0
-expand_margin_top = 3.0
-expand_margin_right = 3.0
-expand_margin_bottom = 3.0
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 0.61960787)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwj52"]
+bg_color = Color(0.826, 0.84, 0, 0.79607844)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8646751, 0.86467516, 0.8646751, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 shadow_color = Color(0, 0, 0, 0.61960787)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5v0su"]
-bg_color = Color(0.66, 0.605, 0, 1)
+bg_color = Color(0.826, 0.84, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -53,8 +56,12 @@ shadow_color = Color(0, 0, 0, 0.61960787)
 
 [resource]
 Button/constants/icon_max_width = 30
+Button/constants/outline_size = 2
+Button/fonts/font = ExtResource("1_5v0su")
 Button/icons/icon = null
 Button/styles/hover = SubResource("StyleBoxFlat_iebfo")
 Button/styles/normal = SubResource("StyleBoxFlat_vwj52")
 Button/styles/pressed = SubResource("StyleBoxFlat_5v0su")
 Label/colors/font_shadow_color = Color(0, 0, 0, 0.8039216)
+Label/constants/outline_size = 4
+Label/fonts/font = ExtResource("2_k2pjq")

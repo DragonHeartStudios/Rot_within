@@ -1,0 +1,544 @@
+[gd_scene format=3 uid="uid://cdv2dhtev6nsl"]
+
+[ext_resource type="Theme" uid="uid://dvc1dki2baxnc" path="res://resources/themes/globale.tres" id="1_f5cxw"]
+[ext_resource type="Script" uid="uid://bfn3vn8dr4ahg" path="res://scripts/ui.gd" id="1_u7n8c"]
+[ext_resource type="StyleBox" uid="uid://d2ean8r6b5gf1" path="res://resources/themes/panel_box_flat.tres" id="3_aac20"]
+[ext_resource type="Texture2D" uid="uid://ceppreq0nohbc" path="res://assets/sprites/UI/green-energy.png" id="4_0dwhk"]
+[ext_resource type="PackedScene" uid="uid://dq5flnnffp78o" path="res://scenes/map.tscn" id="4_g5kmx"]
+[ext_resource type="PackedScene" uid="uid://bm0be3yueyyx" path="res://scenes/ui/xp_container.tscn" id="4_mgwkc"]
+[ext_resource type="FontFile" uid="uid://bljwc7bf8bvb" path="res://resources/fonts/static/Nunito-Bold.ttf" id="5_pfayw"]
+[ext_resource type="AudioStream" uid="uid://uqv2r8j2p6jo" path="res://assets/audio/sfx/paper-flutter-5933.mp3" id="7_0i47d"]
+[ext_resource type="Script" uid="uid://bugxyhgjt1t0x" path="res://scripts/popup_chois.gd" id="7_7vp6q"]
+[ext_resource type="FontFile" uid="uid://dwujvvd5mnmfc" path="res://resources/fonts/static/Nunito-Black.ttf" id="8_4kltc"]
+[ext_resource type="Script" uid="uid://c61advyb04k7n" path="res://scripts/day_finiched.gd" id="8_hl07w"]
+[ext_resource type="FontFile" uid="uid://c7dna7sc7kpqb" path="res://resources/fonts/static/Nunito-BoldItalic.ttf" id="9_hl07w"]
+[ext_resource type="FontFile" uid="uid://c1s2v7jhpj8le" path="res://resources/fonts/static/Nunito-Italic.ttf" id="10_swkix"]
+[ext_resource type="PackedScene" uid="uid://c4iadocj3d7oy" path="res://scenes/confetti.tscn" id="11_hc5d0"]
+[ext_resource type="FontFile" uid="uid://c6cuumb84y7r6" path="res://resources/fonts/Nunito/static/Nunito-Black(2).ttf" id="13_hc5d0"]
+[ext_resource type="PackedScene" uid="uid://cxoq1s0nymvql" path="res://scenes/fin.tscn" id="13_swkix"]
+[ext_resource type="AudioStream" uid="uid://efu7mltqj103" path="res://assets/audio/sfx/MA_GarnaVutka_Magic_Pizzicato_Notifications_05.wav" id="15_n3vwu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4w2x3"]
+bg_color = Color(0.11, 0.11, 0.11, 0.9607843)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.446777, 0.4467771, 0.44677675, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.31764707)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_svq4k"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+color = Color(0.5, 0.5, 0.5, 1)
+grow_begin = -4.0
+grow_end = -4.0
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5kmx"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.2755, 0.57, 0, 0.5294118)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dwhk"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.33890668, 0.71, 0.2556, 1)
+border_color = Color(0.54896253, 0.54896265, 0.54896235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 6
+
+[node name="UI" type="Control" unique_id=2136956030]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_f5cxw")
+script = ExtResource("1_u7n8c")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=852844069]
+z_index = 60
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="header" type="Panel" parent="MarginContainer" unique_id=563539149]
+custom_minimum_size = Vector2(0, 43.995)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("3_aac20")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/header" unique_id=334159987]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/header/MarginContainer" unique_id=1433417704]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 141
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/header/MarginContainer/HBoxContainer" unique_id=746989278]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4w2x3")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/header/MarginContainer/HBoxContainer/PanelContainer" unique_id=1639380440]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/header/MarginContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=878788013]
+layout_mode = 2
+
+[node name="dettte" type="Label" parent="MarginContainer/header/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=137449746]
+layout_mode = 2
+size_flags_horizontal = 4
+tooltip_text = "Dept to be repaid"
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "Dette 350/20.000 $"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/header/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=2116046111]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_svq4k")
+
+[node name="xpContainer" parent="MarginContainer/header/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1140490501 instance=ExtResource("4_mgwkc")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/header/MarginContainer/HBoxContainer" unique_id=2100326099]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/header/MarginContainer/HBoxContainer/HBoxContainer" unique_id=422699337]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_0dwhk")
+expand_mode = 1
+
+[node name="energie" type="ProgressBar" parent="MarginContainer/header/MarginContainer/HBoxContainer/HBoxContainer" unique_id=2029618147]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(277.42, 23.655)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "Energy"
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("5_pfayw")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/background = SubResource("StyleBoxFlat_g5kmx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0dwhk")
+value = 86.14
+show_percentage = false
+
+[node name="energie_Label" type="Label" parent="MarginContainer/header/MarginContainer/HBoxContainer/HBoxContainer/energie" unique_id=737667718]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="jours" type="Label" parent="MarginContainer/header/MarginContainer/HBoxContainer" unique_id=170017726]
+layout_mode = 2
+size_flags_horizontal = 4
+tooltip_text = "days"
+mouse_filter = 1
+text = "Days 7/30"
+
+[node name="maps" type="Button" parent="MarginContainer/header/MarginContainer" unique_id=827002548]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "maps"
+
+[node name="map" parent="." unique_id=671867917 instance=ExtResource("4_g5kmx")]
+visible = false
+z_index = 40
+layout_mode = 1
+
+[node name="sound_map" type="AudioStreamPlayer" parent="map" unique_id=2124798699]
+stream = ExtResource("7_0i47d")
+volume_db = -20.905
+
+[node name="popup_chois" type="CenterContainer" parent="." unique_id=1948146178]
+visible = false
+z_index = 70
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_f5cxw")
+script = ExtResource("7_7vp6q")
+
+[node name="fond_noire" type="ColorRect" parent="popup_chois" unique_id=1323224922]
+custom_minimum_size = Vector2(1247.855, 719.7)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.8117647)
+
+[node name="panel" type="Panel" parent="popup_chois" unique_id=1742301903]
+custom_minimum_size = Vector2(841.68, 380.24)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_aac20")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="popup_chois/panel" unique_id=538994550]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.50003
+offset_top = -49.0
+offset_right = 80.49997
+offset_bottom = -20.38501
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 53
+
+[node name="titre" type="Label" parent="popup_chois/panel" unique_id=135949614]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -181.0
+offset_top = 8.0
+offset_right = 180.99998
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 12
+text = "Choice of the day"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="popup_chois/panel" unique_id=209520246]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 60
+
+[node name="Label" type="RichTextLabel" parent="popup_chois/panel/MarginContainer" unique_id=1748408240]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("8_4kltc")
+theme_override_fonts/bold_font = ExtResource("5_pfayw")
+theme_override_fonts/bold_italics_font = ExtResource("9_hl07w")
+theme_override_fonts/italics_font = ExtResource("10_swkix")
+theme_override_font_sizes/normal_font_size = 19
+bbcode_enabled = true
+text = "You have to make a choice right now"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="day_finiched" type="Control" parent="." unique_id=1259714132]
+visible = false
+z_index = 70
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("8_hl07w")
+
+[node name="fond_noire" type="ColorRect" parent="day_finiched" unique_id=436840879]
+custom_minimum_size = Vector2(1247.855, 719.7)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.91764706)
+
+[node name="Label" type="RichTextLabel" parent="day_finiched" unique_id=1288085850]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -314.5
+offset_top = -181.5
+offset_right = 314.5
+offset_bottom = -42.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("8_4kltc")
+theme_override_fonts/bold_font = ExtResource("5_pfayw")
+theme_override_fonts/bold_italics_font = ExtResource("9_hl07w")
+theme_override_fonts/italics_font = ExtResource("10_swkix")
+theme_override_font_sizes/normal_font_size = 44
+text = "You have finished your day.
+Congratulations !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="suivant" type="Button" parent="day_finiched" unique_id=867859598]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.25
+offset_top = 251.5
+offset_right = 71.25
+offset_bottom = 276.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "next"
+
+[node name="confetti" parent="day_finiched" unique_id=575195268 instance=ExtResource("11_hc5d0")]
+position = Vector2(352, 316.99997)
+rotation = -0.17453292
+scale = Vector2(3.3244286, 3.322389)
+
+[node name="confetti2" parent="day_finiched" unique_id=1212333387 instance=ExtResource("11_hc5d0")]
+position = Vector2(807.0001, 316.99994)
+rotation = 0.17453292
+scale = Vector2(3.3244286, 3.322389)
+
+[node name="MarginContainer" type="MarginContainer" parent="day_finiched" unique_id=1709591708]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 350
+theme_override_constants/margin_top = 340
+theme_override_constants/margin_right = 350
+theme_override_constants/margin_bottom = 111
+
+[node name="VBoxContainer" type="VBoxContainer" parent="day_finiched/MarginContainer" unique_id=2116344412]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=647568454]
+modulate = Color(0.7061666, 1, 0.59000003, 1)
+layout_mode = 2
+text = "Gross Salary"
+
+[node name="Label2" type="Label" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=696289351]
+modulate = Color(0.7061666, 1, 0.59000003, 1)
+layout_mode = 2
+text = "Savings"
+
+[node name="HSeparator" type="HSeparator" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=175798490]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=1071331599]
+modulate = Color(1, 0.62, 0.62, 1)
+layout_mode = 2
+text = "Rent"
+
+[node name="Label5" type="Label" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=1507718388]
+modulate = Color(1, 0.62, 0.62, 1)
+layout_mode = 2
+text = "Ingredient Cost"
+
+[node name="Label6" type="Label" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=742912754]
+modulate = Color(1, 0.62, 0.62, 1)
+layout_mode = 2
+text = "Client Penalties"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="day_finiched/MarginContainer" unique_id=686524088]
+layout_mode = 2
+
+[node name="lb_salaire_de_base" type="Label" parent="day_finiched/MarginContainer/VBoxContainer2" unique_id=1306911886]
+modulate = Color(0.7061666, 1, 0.59000003, 1)
+layout_mode = 2
+text = "35€"
+horizontal_alignment = 2
+
+[node name="lb_economie" type="Label" parent="day_finiched/MarginContainer/VBoxContainer2" unique_id=1632790273]
+modulate = Color(0.7061666, 1, 0.59000003, 1)
+layout_mode = 2
+text = "15€"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="day_finiched/MarginContainer/VBoxContainer2" unique_id=2056243256]
+layout_mode = 2
+
+[node name="lb_loyer" type="Label" parent="day_finiched/MarginContainer/VBoxContainer2" unique_id=2118689575]
+modulate = Color(1, 0.62, 0.62, 1)
+layout_mode = 2
+text = "-10 $"
+horizontal_alignment = 2
+
+[node name="lb_prix_des_ingredient" type="Label" parent="day_finiched/MarginContainer/VBoxContainer2" unique_id=350719267]
+modulate = Color(1, 0.62, 0.62, 1)
+layout_mode = 2
+text = "-10"
+horizontal_alignment = 2
+
+[node name="lb_client_pas_content" type="Label" parent="day_finiched/MarginContainer/VBoxContainer2" unique_id=1730356374]
+modulate = Color(1, 0.62, 0.62, 1)
+layout_mode = 2
+text = "-10"
+horizontal_alignment = 2
+
+[node name="totale" type="RichTextLabel" parent="day_finiched/MarginContainer" unique_id=1357201492]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/normal_font = ExtResource("13_hc5d0")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Totale : 45.43€"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="fin" parent="." unique_id=2128361061 instance=ExtResource("13_swkix")]
+visible = false
+z_index = 70
+layout_mode = 1
+
+[node name="sound_day_finish" type="AudioStreamPlayer" parent="." unique_id=1137608221]
+stream = ExtResource("15_n3vwu")
+volume_db = -24.855
+
+[node name="aide_dormir" type="Control" parent="." unique_id=83915053]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_f5cxw")
+
+[node name="fond_noire" type="ColorRect" parent="aide_dormir" unique_id=1110876180]
+z_index = 60
+custom_minimum_size = Vector2(1247.855, 719.7)
+layout_mode = 0
+offset_left = -48.35498
+offset_top = -30.199982
+offset_right = 1199.5
+offset_bottom = 689.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.91764706)
+
+[node name="MarginContainer" type="MarginContainer" parent="aide_dormir" unique_id=1104245977]
+z_index = 70
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 380
+theme_override_constants/margin_top = 218
+theme_override_constants/margin_right = 380
+theme_override_constants/margin_bottom = 206
+
+[node name="Panel" type="PanelContainer" parent="aide_dormir/MarginContainer" unique_id=1869865219]
+layout_mode = 2
+theme = ExtResource("1_f5cxw")
+theme_override_styles/panel = ExtResource("3_aac20")
+
+[node name="MarginContainer" type="MarginContainer" parent="aide_dormir/MarginContainer/Panel" unique_id=487594050]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ok" type="Button" parent="aide_dormir/MarginContainer/Panel/MarginContainer" unique_id=1301941218]
+custom_minimum_size = Vector2(51.05, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "close"
+
+[node name="Label" type="Label" parent="aide_dormir/MarginContainer/Panel/MarginContainer" unique_id=1834540234]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "How to play"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="aide_dormir/MarginContainer/Panel/MarginContainer" unique_id=516991002]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "You are out of energy ! Go get some rest."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[connection signal="pressed" from="MarginContainer/header/MarginContainer/maps" to="." method="_on_maps_pressed"]
+[connection signal="button_up" from="day_finiched/suivant" to="day_finiched" method="_on_suivant_button_up"]
+[connection signal="pressed" from="aide_dormir/MarginContainer/Panel/MarginContainer/ok" to="." method="_on_ok_pressed"]

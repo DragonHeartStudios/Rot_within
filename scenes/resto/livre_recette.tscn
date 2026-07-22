@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://b14x0bufue671"]
+
+[ext_resource type="Texture2D" uid="uid://563hh7jj6q6s" path="res://assets/sprites/livre.png" id="1_4a6j5"]
+[ext_resource type="Texture2D" uid="uid://cfdukit0i0hjh" path="res://assets/sprites/UI/fleche-g.png" id="2_mfa7e"]
+[ext_resource type="Texture2D" uid="uid://d21h42yhucx03" path="res://assets/sprites/UI/fleche-d.png" id="3_fbo6w"]
+[ext_resource type="FontFile" uid="uid://c7dna7sc7kpqb" path="res://resources/fonts/static/Nunito-BoldItalic.ttf" id="4_15thk"]
+
+[sub_resource type="Theme" id="Theme_b21xl"]
+
+[node name="livre_recette" type="TextureRect" unique_id=1859955386]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = -224.0
+offset_right = 351.41318
+offset_bottom = -29.0
+grow_vertical = 0
+texture = ExtResource("1_4a6j5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=640839083]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "book"
+horizontal_alignment = 1
+
+[node name="fleche_g" type="Button" parent="." unique_id=1199744881]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 32.0
+offset_bottom = 12.0
+grow_vertical = 2
+icon = ExtResource("2_mfa7e")
+
+[node name="fleche_d" type="Button" parent="." unique_id=83284620]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("3_fbo6w")
+
+[node name="Label2" type="RichTextLabel" parent="." unique_id=2106874102]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 26.0
+offset_right = -35.413177
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_b21xl")
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("4_15thk")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "[b][color=chocolate]BURGER:[/color][/b]
+[indent]• Buns
+• Cheese
+• Meat
+• Lettuce[/indent]
+
+[b][color=yellow]Cheese omelette:[/color][/b]
+[indent]• Cheese
+• Egg[/indent]
+
+[b][color=green]MIXED SALAD:[/color][/b]
+[indent]• Tomato
+• Lettuce
+• Cucumber[/indent]
+
+[b][color=burlywood]SANDWICH:[/color][/b]
+[indent]• Baguette
+• Cheese
+• Tomato
+• Lettuce[/indent]"

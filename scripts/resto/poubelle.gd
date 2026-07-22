@@ -1,4 +1,5 @@
 extends TextureRect # Remplace par Panel si ton nœud est un Panel
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	# On vérifie si ce qu'on glisse possède des groupes (donc que c'est bien un aliment ou un plat)
@@ -21,3 +22,4 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	data.queue_free()
 	
 	print("L'objet a été jeté à la poubelle ! 🗑️")
+	audio_stream_player.play()

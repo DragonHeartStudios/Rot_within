@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://beajyst13dny1"
+path="res://.godot/imported/MA_PaulaSounds_UIMechanisem_Futuristic, SciFi, Openup, Menu.wav-a4a00d54bb6c6cdef8926ab17d90ff7a.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/MA_PaulaSounds_UIMechanisem_Futuristic, SciFi, Openup, Menu.wav"
+dest_files=["res://.godot/imported/MA_PaulaSounds_UIMechanisem_Futuristic, SciFi, Openup, Menu.wav-a4a00d54bb6c6cdef8926ab17d90ff7a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

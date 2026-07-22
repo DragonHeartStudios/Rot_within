@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dr28tfr7o0cs0" path="res://assets/sprites/ingredient/Viande cuite.png" id="1_scmyo"]
 [ext_resource type="Script" uid="uid://d1vq2e1t4lb3d" path="res://scripts/resto/obj.gd" id="2_f1485"]
 
-[node name="viande_cuite" type="TextureRect" unique_id=1234855253 groups=["viande_cuite"]]
+[node name="viande_cuite" type="TextureRect" unique_id=1234855253 groups=["Cooked Patty"]]
 z_index = 11
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+tooltip_text = "Cooked Patty"
 mouse_filter = 0
 texture = ExtResource("1_scmyo")
 expand_mode = 1

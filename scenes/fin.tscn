@@ -1,0 +1,275 @@
+[gd_scene format=3 uid="uid://cxoq1s0nymvql"]
+
+[ext_resource type="Script" uid="uid://dw7y6jharxk4e" path="res://scripts/fin.gd" id="1_24yaq"]
+[ext_resource type="FontFile" uid="uid://c6cuumb84y7r6" path="res://resources/fonts/Nunito/static/Nunito-Black(2).ttf" id="2_08607"]
+[ext_resource type="FontFile" uid="uid://c7dna7sc7kpqb" path="res://resources/fonts/static/Nunito-BoldItalic.ttf" id="3_08607"]
+[ext_resource type="Texture2D" uid="uid://dcungsh0t6so8" path="res://assets/sprites/fin/fin ruinner.png" id="5_e4dr8"]
+[ext_resource type="Theme" uid="uid://cjxxgtjrxjbuy" path="res://resources/themes/margin_end.tres" id="5_lxfsg"]
+[ext_resource type="Texture2D" uid="uid://dagjo7lnq1yhg" path="res://assets/sprites/fin/fin prison.png" id="6_imhjk"]
+[ext_resource type="Texture2D" uid="uid://b6yqsvq6s4qf" path="res://assets/sprites/fin/fin demon.png" id="7_whqpg"]
+[ext_resource type="Texture2D" uid="uid://bdd6mp5y0mmkr" path="res://assets/sprites/fin/fin heureuse.png" id="8_lnlo2"]
+[ext_resource type="Texture2D" uid="uid://2ajvark1xqq8" path="res://assets/sprites/fin/fin mutant.png" id="9_1evt0"]
+
+[node name="fin" type="Control" unique_id=2128361061]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_24yaq")
+
+[node name="Label" type="Label" parent="." unique_id=1064911940]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.5
+offset_top = -201.5
+offset_right = 247.5
+offset_bottom = -74.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6279837, 0.47611403, 0.9232018, 1)
+theme_override_fonts/font = ExtResource("2_08607")
+theme_override_font_sizes/font_size = 92
+text = "Game Over"
+
+[node name="HSeparator" type="HSeparator" parent="Label" unique_id=827855870]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1762471300]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.5
+offset_top = 148.0
+offset_right = 228.5
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="argent" type="RichTextLabel" parent="HBoxContainer" unique_id=797529032]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_08607")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Argent : 3244€"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="honnetete" type="RichTextLabel" parent="HBoxContainer" unique_id=2090616260]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_08607")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Honnêteté : -7"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="---ends-------" type="Node" parent="." unique_id=1524565944]
+
+[node name="ruinne" type="Control" parent="." unique_id=1868440837]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ruinne" unique_id=83258175]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_lxfsg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ruinne/MarginContainer" unique_id=62988705]
+layout_mode = 2
+text = "You ran out of money before you could pay off your debt.
+Little by little, everything was taken from you. Your food, your home, your dignity. Soon, all you had left were the streets. Cold nights. Empty stomach. Endless regret. Henkins never got his money back. You never became a monster. But sometimes... A ruined man is harder to look at than one."
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ruinne" unique_id=1019567062]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e4dr8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="prison" type="Control" parent="." unique_id=795518436]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="prison" unique_id=2059401183]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_lxfsg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="prison/MarginContainer" unique_id=850859707]
+layout_mode = 2
+text = "The deadline has passed. Henkins didn't wait a single minute to rat you out. Sirens are wailing outside your house.
+Thrown into a dark cell, you await your trial. But the rot growing inside you doesn't stop behind bars. Without the work to distract you, the mutation accelerates. Day after day, your skin deteriorates, your posture bending under the weight of your regrets and dishonesty. The guards avoid your cell, terrified by the sounds escaping from it.
+Henkins threw you in prison to punish you, but he condemned you to become the monster you were hiding within."
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="prison" unique_id=139315814]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_imhjk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="fin_demon" type="Control" parent="." unique_id=1983253509]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="fin_demon" unique_id=1263592252]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_lxfsg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="fin_demon/MarginContainer" unique_id=1497247235]
+layout_mode = 2
+text = "You made it. Down to the very last cent, the debt is paid. Henkins takes the money, but his eyes never leave your face. He takes a step back, terrified, before whispering: 'Look at yourself, Decker... You saved your skin, but you sold your soul.' Left alone, you step up to the bathroom mirror to wipe the sweat from your face. You look up. What you see freezes the blood in your veins. These aren't just dark circles or fatigue anymore. Your skin has turned pitch black, your teeth are jagged, and your empty eyes gleam with a malicious light. You paid Henkins, but the real price was your humanity. You have become the very monster you pretended to feed."
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="fin_demon" unique_id=687659047]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_whqpg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="true_ending" type="Control" parent="." unique_id=1984476972]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="true_ending" unique_id=1636564899]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_lxfsg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="true_ending/MarginContainer" unique_id=309818065]
+layout_mode = 2
+text = "It's over. The debt is fully paid, and every choice you made was done with your head held high. As you lay down the final bill, you feel an immense weight lift from your shoulders. Henkins counts the money, then looks up at you. The disgust in his eyes is gone, replaced by profound surprise. He offers a faint smile and whispers: 'I can't forget the past, Decker... but I see your efforts. Maybe I can stop hating you.' Back home, you look at yourself in the mirror. The transformation is striking. The deep dark circles are gone, your color has returned, and your eyes are no longer empty—they shine once again. You smile at your reflection. The rot has lost. You saved your business, but above all, you stayed human."
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="true_ending" unique_id=1044164270]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_lnlo2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="apocalypse" type="Control" parent="." unique_id=1354206883]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="apocalypse" unique_id=1296135454]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_lxfsg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="apocalypse/MarginContainer" unique_id=1022356861]
+layout_mode = 2
+text = "You served radioactive food to every single customer. One by one, they began to mutate. Bones twisted, skin rotted, humanity faded.
+Soon, the infection spread across the entire city. The streets became chaos, mutants hunted the living, and the bitten turned into monsters themselves.
+Screams echoed through every alley. No one was safe anymore.
+The city is contaminated.
+You paid your debt... but doomed everyone else."
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="apocalypse" unique_id=323769729]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_1evt0")
+expand_mode = 1
+stretch_mode = 5

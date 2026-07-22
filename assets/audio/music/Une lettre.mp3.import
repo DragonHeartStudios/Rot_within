@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0o2r2senpshk"
+path="res://.godot/imported/Une lettre.mp3-20a50859aa6e30463019416b92a78c14.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Une lettre.mp3"
+dest_files=["res://.godot/imported/Une lettre.mp3-20a50859aa6e30463019416b92a78c14.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

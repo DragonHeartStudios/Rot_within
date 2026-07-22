@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://cd7j7f1wqfgmu"]
+
+[ext_resource type="Texture2D" uid="uid://cmq0td21hkxqg" path="res://assets/sprites/parchment-old-paper-sheet-vector-illustration-isolated-on-white-vector-id1407081846-3990833135-removebg-preview.png" id="1_h8cij"]
+[ext_resource type="Script" uid="uid://ddkpw4tovxfbg" path="res://scripts/lettre.gd" id="2_o0057"]
+[ext_resource type="Theme" uid="uid://dvc1dki2baxnc" path="res://resources/themes/globale.tres" id="3_3u2ip"]
+[ext_resource type="Texture2D" uid="uid://c28gp1blhwstt" path="res://assets/sprites/turn-back.png" id="4_i4de3"]
+[ext_resource type="AudioStream" uid="uid://cm6lhx8ky7f4" path="res://assets/audio/sfx/Paper Flip 1.wav" id="5_5fb1j"]
+
+[node name="lettre" type="Control" unique_id=574656212]
+z_index = 70
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("2_o0057")
+text1 = "[b]Mr. Decker,[/b]
+
+We are pleased to inform you that you have been hired as a cook at [b]Spudsy’s[/b].
+
+Your application caught our attention and impressed our management. Our director has also left you a personal note on the back of this letter regarding your new position.
+
+Have a nice day."
+text2 = "I recognized you, you little [s]bastard[/s].
+
+Decker...
+
+After [color=yellow][b]8 YEARS[/b][/color] you really thought I would've forgotten the scam you pulled on my family?
+[shake rate=20 level=10][color=red][b]NO.[/b][/color][/shake]
+And I fully intend to make you pay for everything you made me lose.
+Even if I would've preferred seeing your head on the floor of my garage as compensation...
+I'll be merciful.
+[b]Work for me.[/b]
+[b]Pay back your debt.[/b]
+If you repay it fast enough...
+Maybe I'll reconsider the idea of putting you down like a sick dog.
+[pulse freq=2.0 color=#ff0000][b]8:00 AM.[/b][/pulse]
+[wave amp=40 freq=8][color=red][b]DON'T BE LATE.[/b][/color][/wave]"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1256478241]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.9411765)
+
+[node name="lettre" type="TextureRect" parent="." unique_id=26699092]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h8cij")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="lettre" unique_id=145881285]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -174.0
+offset_right = 152.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Mr Decker,
+ Je suis heureux de vous informer que nous vous embauchons en tant que cuisinez chez Spudsy’s.
+ Votre dossier nous a fait de l'œil et à attirer l’attention de notre dirigeant, qui vous a laissé un mot au dos de cette lettre pour vous féliciter de votre nouveaux postes
+Bonne journée,"
+fit_content = true
+scroll_active = false
+
+[node name="Button" type="Button" parent="." unique_id=995509981]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75200003
+anchor_top = 0.441
+anchor_right = 0.75200003
+anchor_bottom = 0.441
+offset_left = -102.304016
+offset_top = -78.768005
+offset_right = -70.304016
+offset_bottom = -41.768005
+tooltip_text = "Flip the paper"
+theme = ExtResource("3_3u2ip")
+icon = ExtResource("4_i4de3")
+
+[node name="close" type="Button" parent="." unique_id=582108742]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -186.0
+offset_top = -63.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_3u2ip")
+text = "close"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=785630886]
+stream = ExtResource("5_5fb1j")
+volume_db = -19.067
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bl47vtkvnhi54"]
+
+[ext_resource type="Script" uid="uid://d0qgeotjfp5us" path="res://scripts/PlaylistGlobale.gd" id="1_ejojg"]
+[ext_resource type="Script" uid="uid://dqgbf3j67t3xt" path="res://scripts/ElementMusique.gd" id="2_wia2r"]
+[ext_resource type="AudioStream" uid="uid://bklc7au3qvaix" path="res://assets/audio/music/Un repas _.mp3" id="3_mobtd"]
+[ext_resource type="AudioStream" uid="uid://c0o2r2senpshk" path="res://assets/audio/music/Une lettre.mp3" id="4_keplp"]
+
+[sub_resource type="Resource" id="Resource_4w2x3"]
+script = ExtResource("2_wia2r")
+fichier_audio = ExtResource("3_mobtd")
+metadata/_custom_type_script = "uid://dqgbf3j67t3xt"
+
+[sub_resource type="Resource" id="Resource_ygedu"]
+script = ExtResource("2_wia2r")
+fichier_audio = ExtResource("4_keplp")
+metadata/_custom_type_script = "uid://dqgbf3j67t3xt"
+
+[node name="music" type="Node" unique_id=1460577186]
+script = ExtResource("1_ejojg")
+playlist = Array[ExtResource("2_wia2r")]([SubResource("Resource_4w2x3"), SubResource("Resource_ygedu")])

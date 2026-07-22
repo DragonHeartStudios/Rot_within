@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+tooltip_text = "Baguette"
 mouse_filter = 0
 texture = ExtResource("1_81f8t")
 expand_mode = 1

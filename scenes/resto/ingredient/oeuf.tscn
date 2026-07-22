@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://2ddg7h8noelf" path="res://assets/sprites/ingredient/Œuf.png" id="1_c126s"]
 [ext_resource type="Script" uid="uid://d1vq2e1t4lb3d" path="res://scripts/resto/obj.gd" id="2_lf5nn"]
 
-[node name="oeuf" type="TextureRect" unique_id=1234855253 groups=["oeuf"]]
+[node name="oeuf" type="TextureRect" unique_id=1234855253 groups=["Egg"]]
 z_index = 11
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+tooltip_text = "Egg"
 mouse_filter = 0
 texture = ExtResource("1_c126s")
 expand_mode = 1

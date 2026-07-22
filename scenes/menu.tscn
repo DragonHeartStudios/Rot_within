@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://vqfuv5ljitp3"]
+
+[ext_resource type="Script" uid="uid://ce161iedrks2e" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://cjas5yjqp40lw" path="res://assets/textures/affiche_rw.png" id="1_yqeox"]
+[ext_resource type="FontFile" uid="uid://dn6qoun2p3dej" path="res://resources/fonts/static/Nunito-Light.ttf" id="3_con2f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhnvy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+bg_color = Color(0, 0, 0, 0.5411765)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+bg_color = Color(0, 0, 0, 0.3372549)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v86rl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13sgg"]
+
+[sub_resource type="Animation" id="Animation_con2f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button_play:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mhnvy"]
+resource_name = "new_animation"
+length = 1.8
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button_play:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ytvr"]
+_data = {
+&"RESET": SubResource("Animation_con2f"),
+&"new_animation": SubResource("Animation_mhnvy")
+}
+
+[node name="Menu" type="Control" unique_id=543286447]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjb58")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1960686630]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yqeox")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button_play" type="Button" parent="." unique_id=2100816562]
+custom_minimum_size = Vector2(317.08, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = 207.0
+offset_right = 210.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_con2f")
+theme_override_font_sizes/font_size = 49
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mhnvy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mhnvy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_con2f")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v86rl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_13sgg")
+text = "Presse here to start"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1524519779]
+libraries/ = SubResource("AnimationLibrary_4ytvr")
+autoplay = &"new_animation"
+
+[connection signal="pressed" from="Button_play" to="." method="_on_button_play_pressed"]

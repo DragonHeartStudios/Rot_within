@@ -1,0 +1,14 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://c4ksoe283o11d"]
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_j3pel"]
+resource_name = "EQ"
+
+[resource]
+bus/1/name = &"Music"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -34.995274
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectEQ_j3pel")
+bus/1/effect/0/enabled = true

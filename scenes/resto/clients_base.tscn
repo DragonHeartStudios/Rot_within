@@ -1,19 +1,135 @@
 [gd_scene format=3 uid="uid://bn1qhoayjfc2i"]
 
-[ext_resource type="Texture2D" uid="uid://bwhrkjrwksvco" path="res://{BD3BFF27-E340-409D-B58C-71062B00B608}.png" id="1_1dxpg"]
 [ext_resource type="Script" uid="uid://cxfpqbmxgo2jx" path="res://scripts/resto/clients_base.gd" id="2_osrx8"]
-[ext_resource type="Texture2D" uid="uid://bgxxl5w0ojj55" path="res://{BDAB1D60-F0EA-4FD9-9D94-E3C44001C54D}.png" id="3_2ele5"]
+[ext_resource type="Texture2D" uid="uid://dv4x50eejcnuk" path="res://assets/sprites/UI/bull.png" id="3_p744p"]
 [ext_resource type="Theme" uid="uid://dvc1dki2baxnc" path="res://resources/themes/globale.tres" id="4_osrx8"]
+[ext_resource type="Texture2D" uid="uid://wexjtker2610" path="res://assets/sprites/plat/Burger.png" id="4_ut5y0"]
 [ext_resource type="AudioStream" uid="uid://b44n4wlqd8ur0" path="res://assets/audio/sfx/Notification Bell Sound Effect ( By Ashish Editz )_01.mp3" id="5_2ele5"]
-[ext_resource type="AudioStream" uid="uid://cxk51pyl0ck8h" path="res://assets/audio/sfx/NOTIF_ERREUR-2.mp3" id="6_p744p"]
-[ext_resource type="AudioStream" uid="uid://bfd58p1ytt2dv" path="res://assets/audio/sfx/NOTIF_ERREUR.mp3" id="7_003ye"]
+[ext_resource type="Texture2D" uid="uid://c328mftb2m1n8" path="res://assets/sprites/plat/omelet au fromage.png" id="5_4e131"]
+[ext_resource type="Texture2D" uid="uid://c5o1j11w075uf" path="res://assets/sprites/plat/Salade au concombre Tomates.png" id="6_rhwmh"]
+[ext_resource type="Texture2D" uid="uid://baf8y2kk3lyxh" path="res://assets/sprites/plat/Sandwich.png" id="7_e8tm0"]
+[ext_resource type="AudioStream" uid="uid://bhieqteb32oio" path="res://assets/audio/sfx/MA_PaulaSounds_BrightResonantChimes_1.wav" id="8_003ye"]
+[ext_resource type="Texture2D" uid="uid://bhfetcbqdp0q6" path="res://assets/sprites/resto/clients/perso ov.png" id="8_yy7y8"]
+[ext_resource type="Texture2D" uid="uid://cnxx7nqqmin0j" path="res://assets/sprites/resto/clients/mutant/perso ovMuté.png" id="9_cqlno"]
+[ext_resource type="AudioStream" uid="uid://bxbfe1tw2ivsn" path="res://assets/audio/sfx/client/pas content/mal/grunting_1_alex.wav" id="10_8i21b"]
+[ext_resource type="Texture2D" uid="uid://bg3ull7785oa8" path="res://assets/sprites/resto/clients/perso léman.png" id="10_8phy6"]
+[ext_resource type="AudioStream" uid="uid://d0oof1ta3hdxc" path="res://assets/audio/sfx/client/pas content/mal/grunting_2_alex.wav" id="11_fsjsh"]
+[ext_resource type="Texture2D" uid="uid://b225xytgqwt1s" path="res://assets/sprites/resto/clients/mutant/perso lémanMUTé.png" id="11_gr87y"]
+[ext_resource type="Texture2D" uid="uid://hp5ssxuom257" path="res://assets/sprites/resto/clients/preso steven.png" id="11_mql4m"]
+[ext_resource type="Texture2D" uid="uid://1fpkqlfnqitx" path="res://assets/sprites/resto/clients/moiii.png" id="12_dxxd1"]
+[ext_resource type="AudioStream" uid="uid://c0mvw2qiigu0t" path="res://assets/audio/sfx/client/pas content/mal/grunting_3_alex.wav" id="12_ihm8u"]
+[ext_resource type="Texture2D" uid="uid://3s3fedxg7sbw" path="res://assets/sprites/resto/clients/perqo Zaly !.png" id="13_8vmfq"]
+[ext_resource type="Texture2D" uid="uid://hbccpxm4g2c" path="res://assets/sprites/resto/clients/mutant/pr muté.png" id="13_diivk"]
+[ext_resource type="AudioStream" uid="uid://nrwg4r3y5tp7" path="res://assets/audio/sfx/client/pas content/mal/grunting_9_alex.wav" id="13_yy7y8"]
+[ext_resource type="AudioStream" uid="uid://d2cxe58w2qtih" path="res://assets/audio/sfx/client/pas content/femal/grunting_3_karen.wav" id="14_8xv3l"]
+[ext_resource type="AudioStream" uid="uid://bi2fqc3maoomf" path="res://assets/audio/sfx/client/pas content/femal/grunting_9_karen.wav" id="15_8phy6"]
+[ext_resource type="Texture2D" uid="uid://c483r7jh1patj" path="res://assets/sprites/resto/clients/mutant/moiii muté.png" id="15_74xko"]
+[ext_resource type="Texture2D" uid="uid://cvdx0r1n1k8bu" path="res://assets/sprites/resto/clients/perso meta.png" id="15_x6j6n"]
+[ext_resource type="AudioStream" uid="uid://dhsmokobpnwll" path="res://assets/audio/sfx/client/pas content/femal/grunting_10_meghan.wav" id="16_mql4m"]
+[ext_resource type="Texture2D" uid="uid://cjojacc6ojqyy" path="res://assets/sprites/resto/clients/mutant/perso Zaly muté.png" id="17_10oin"]
+[ext_resource type="Texture2D" uid="uid://d2qnewrxtihla" path="res://assets/sprites/resto/clients/preso1.png" id="18_o53pm"]
+[ext_resource type="Texture2D" uid="uid://bjgos41rq317j" path="res://assets/sprites/resto/clients/mutant/preso1MUté.png" id="19_48ak8"]
+[ext_resource type="Texture2D" uid="uid://c7jc5o0xvujnq" path="res://assets/sprites/resto/clients/mutant/perso meta muté.png" id="21_8idvs"]
+[ext_resource type="Texture2D" uid="uid://bs3hnfst3ismv" path="res://assets/sprites/resto/clients/perso M3lv1n.png" id="22_ilkvk"]
+[ext_resource type="Texture2D" uid="uid://yldhh3y22n1g" path="res://assets/sprites/resto/clients/mutant/perso M3lv1n Muté.png" id="23_7clek"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_glv1o"]
 blend_mode = 3
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_8i21b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_yy7y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cqlno")
+}],
+"loop": 0,
+"name": &"client1",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8phy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gr87y")
+}],
+"loop": 0,
+"name": &"client2",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_mql4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_diivk")
+}],
+"loop": 0,
+"name": &"client3",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_dxxd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_74xko")
+}],
+"loop": 0,
+"name": &"client4",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_8vmfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_10oin")
+}],
+"loop": 0,
+"name": &"client5",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_o53pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_48ak8")
+}],
+"loop": 0,
+"name": &"client6",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_x6j6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8idvs")
+}],
+"loop": 0,
+"name": &"client7",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_ilkvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_7clek")
+}],
+"loop": 0,
+"name": &"client8",
+"speed": 0.0
+}]
+
 [sub_resource type="Gradient" id="Gradient_eq8i8"]
-offsets = PackedFloat32Array(0.25142857, 0.26857144, 0.69142854, 0.70285714)
-colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.68093383, 0.68612194, 0.70168614, 0.70946825)
+colors = PackedColorArray(0.101960786, 0.101960786, 0.101960786, 0.78431374, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_apv1r"]
 gradient = SubResource("Gradient_eq8i8")
@@ -21,8 +137,8 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="Gradient" id="Gradient_417uq"]
-offsets = PackedFloat32Array(0.25142857, 0.26857144, 0.69142854, 0.70285714)
-colors = PackedColorArray(1, 1, 1, 0, 0.16078432, 0.4509804, 0, 1, 0.16099891, 0.45214123, 0, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.3653295, 0.69142854, 0.70285714)
+colors = PackedColorArray(0.31199098, 0.25181046, 1, 1, 0.46819282, 0.09211858, 1, 1, 0.6232033, 0.0018437929, 0.8162377, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3fn6y"]
 gradient = SubResource("Gradient_417uq")
@@ -46,7 +162,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_osrx8"]
 resource_name = "new_animation"
-length = 8.0
+length = 0.5
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -55,10 +171,10 @@ tracks/0/path = NodePath("bull:modulate")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 6.5, 7.9666667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.70710844, 1.7411002),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ele5"]
@@ -70,80 +186,193 @@ _data = {
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_at3vo"]
 random_pitch = 1.0775464
 random_volume_offset_db = 1.44
-streams_count = 2
-stream_0/stream = ExtResource("6_p744p")
-stream_1/stream = ExtResource("7_003ye")
+streams_count = 7
+stream_0/stream = ExtResource("10_8i21b")
+stream_1/stream = ExtResource("11_fsjsh")
+stream_2/stream = ExtResource("12_ihm8u")
+stream_3/stream = ExtResource("13_yy7y8")
+stream_4/stream = ExtResource("14_8xv3l")
+stream_5/stream = ExtResource("15_8phy6")
+stream_6/stream = ExtResource("16_mql4m")
 
-[node name="clients_base" type="TextureRect" unique_id=2035031765]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_003ye"]
+random_pitch = 1.0293022
+streams_count = 1
+stream_0/stream = ExtResource("8_003ye")
+
+[node name="clients_base" type="Control" unique_id=826550260]
 material = SubResource("CanvasItemMaterial_glv1o")
-size_flags_vertical = 8
-texture = ExtResource("1_1dxpg")
-stretch_mode = 2
-script = ExtResource("2_osrx8")
-vitesse_timer = 3.0
-
-[node name="nom" type="Label" parent="." unique_id=863387304]
-layout_mode = 1
-anchors_preset = 5
+custom_minimum_size = Vector2(105, 206.615)
+layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -32.5
-offset_top = 11.0
-offset_right = 59.5
-offset_bottom = 69.0
+anchor_bottom = 0.5
+offset_left = -68.63251
+offset_top = -93.7325
+offset_right = 36.367493
+offset_bottom = 112.88251
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 42
-text = "Elias"
-horizontal_alignment = 1
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_osrx8")
+vitesse_timer = 4.0
 
 [node name="bull" type="TextureRect" parent="." unique_id=995406691]
-z_index = -6
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 28.5
-offset_top = -104.0
-offset_right = 243.5
-offset_bottom = 37.0
+offset_left = -145.5
+offset_top = -85.0
+offset_right = 81.26288
+offset_bottom = 71.0
 grow_horizontal = 2
-texture = ExtResource("3_2ele5")
+mouse_filter = 2
+texture = ExtResource("3_p744p")
+expand_mode = 1
 
-[node name="LB_command" type="Label" parent="bull" unique_id=635939040]
+[node name="HBoxContainer" type="HBoxContainer" parent="bull" unique_id=1622126490]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 12.0
+offset_right = 206.0
+offset_bottom = 103.0
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="LB_command" type="Label" parent="bull/HBoxContainer" unique_id=635939040]
+layout_mode = 2
+theme = ExtResource("4_osrx8")
+theme_override_colors/font_color = Color(0.86, 0.7883333, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "omelette_fromage"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="bull/HBoxContainer" unique_id=838264164]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="burger" type="TextureRect" parent="bull/HBoxContainer/Control" unique_id=363476139]
+visible = false
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -54.0
-offset_top = 4.5
-offset_right = 38.0
-offset_bottom = 27.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_osrx8")
-theme_override_colors/font_color = Color(0.86, 0.7883333, 0, 1)
-theme_override_font_sizes/font_size = 22
-text = "a burger pls"
+mouse_filter = 2
+texture = ExtResource("4_ut5y0")
+
+[node name="omelette_fromage" type="TextureRect" parent="bull/HBoxContainer/Control" unique_id=1942947512]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_4e131")
+
+[node name="salade mixte" type="TextureRect" parent="bull/HBoxContainer/Control" unique_id=1377430874]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 31.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_rhwmh")
+expand_mode = 1
+
+[node name="sandwich" type="TextureRect" parent="bull/HBoxContainer/Control" unique_id=1860377780]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -19.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_e8tm0")
+expand_mode = 1
+
+[node name="clients_base" type="AnimatedSprite2D" parent="." unique_id=455185575]
+position = Vector2(52, 104.259995)
+scale = Vector2(0.2293047, 0.2293047)
+sprite_frames = SubResource("SpriteFrames_8i21b")
+animation = &"client8"
+speed_scale = 0.0
 
 [node name="timer" type="TextureProgressBar" parent="." unique_id=70877897]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -62.5
-offset_top = -45.0
-offset_right = 1.5
-offset_bottom = 19.0
+offset_left = 28.5
+offset_top = -18.0
+offset_right = 92.5
+offset_bottom = 46.0
 grow_horizontal = 2
+mouse_filter = 2
+value = 34.0
 fill_mode = 4
 texture_under = SubResource("GradientTexture2D_apv1r")
 texture_progress = SubResource("GradientTexture2D_3fn6y")
 
+[node name="nom" type="Label" parent="." unique_id=863387304]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_top = 18.0
+offset_right = 42.5
+offset_bottom = 60.0
+grow_horizontal = 2
+theme = ExtResource("4_osrx8")
+theme_override_font_sizes/font_size = 30
+text = "Elias"
+horizontal_alignment = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=153864313]
 libraries/ = SubResource("AnimationLibrary_2ele5")
-autoplay = &"new_animation"
 
 [node name="arriver" type="AudioStreamPlayer" parent="." unique_id=503116613]
 stream = ExtResource("5_2ele5")
@@ -153,3 +382,7 @@ autoplay = true
 [node name="départe" type="AudioStreamPlayer" parent="." unique_id=1251702776]
 stream = SubResource("AudioStreamRandomizer_at3vo")
 volume_db = -20.0
+
+[node name="bonne_command" type="AudioStreamPlayer" parent="." unique_id=1917773654]
+stream = SubResource("AudioStreamRandomizer_003ye")
+volume_db = -23.513

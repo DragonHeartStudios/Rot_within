@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c0oceab3x0l5n" path="res://assets/sprites/ingredient/Salade.png" id="1_yacg3"]
 [ext_resource type="Script" uid="uid://d1vq2e1t4lb3d" path="res://scripts/resto/obj.gd" id="2_g0cbu"]
 
-[node name="salade" type="TextureRect" unique_id=1234855253 groups=["salade"]]
+[node name="salade" type="TextureRect" unique_id=1234855253 groups=["Lettuce"]]
 z_index = 11
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+tooltip_text = "Lettuce"
 mouse_filter = 0
 texture = ExtResource("1_yacg3")
 expand_mode = 1

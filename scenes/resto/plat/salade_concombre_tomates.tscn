@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://c5o1j11w075uf" path="res://assets/sprites/plat/Salade au concombre Tomates.png" id="1_3153k"]
 [ext_resource type="Script" uid="uid://d1vq2e1t4lb3d" path="res://scripts/resto/obj.gd" id="2_0nw1y"]
 
-[node name="salade_concombre_tomates" type="TextureRect" unique_id=976596502 groups=["salade mixte"]]
+[node name="salade_concombre_tomates" type="TextureRect" unique_id=976596502 groups=["Mixed salad"]]
+texture_filter = 1
 offset_right = 43.0
 offset_bottom = 45.0
+tooltip_text = "Mixed salad"
 texture = ExtResource("1_3153k")
 script = ExtResource("2_0nw1y")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxbfe1tw2ivsn"
+path="res://.godot/imported/grunting_1_alex.wav-17f21654cf5f9027e867f9db9e050575.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/client/pas content/mal/grunting_1_alex.wav"
+dest_files=["res://.godot/imported/grunting_1_alex.wav-17f21654cf5f9027e867f9db9e050575.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

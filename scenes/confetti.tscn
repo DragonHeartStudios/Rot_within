@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c4iadocj3d7oy"]
+
+[sub_resource type="Curve" id="Curve_du648"]
+_data = [Vector2(0, 0.15149689), 0.0, 0.0, 0, 0, Vector2(1, 0.28383225), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="confetti" type="Node2D" unique_id=575195268]
+
+[node name="CPUParticles2D_vert" type="CPUParticles2D" parent="." unique_id=1317532269]
+amount = 30
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 65.6
+initial_velocity_max = 130.55
+angular_velocity_min = 278.45
+angular_velocity_max = 278.45
+linear_accel_min = 9.94
+linear_accel_max = 11.05
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_du648")
+color = Color(3.7541986e-06, 0.730849, 0.38284683, 1)
+
+[node name="CPUParticles2D_rouge" type="CPUParticles2D" parent="." unique_id=1147810435]
+amount = 30
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 65.6
+initial_velocity_max = 130.55
+angular_velocity_min = 278.45
+angular_velocity_max = 278.45
+linear_accel_min = 9.94
+linear_accel_max = 11.05
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_du648")
+color = Color(0.99999994, 0.23288488, 0.3578119, 1)
+
+[node name="CPUParticles2D_jaune" type="CPUParticles2D" parent="." unique_id=808584293]
+amount = 30
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 65.6
+initial_velocity_max = 130.55
+angular_velocity_min = 278.45
+angular_velocity_max = 278.45
+linear_accel_min = 9.94
+linear_accel_max = 11.05
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_du648")
+color = Color(1, 0.8833333, 0, 1)
+
+[node name="CPUParticles2D_jaune2" type="CPUParticles2D" parent="." unique_id=248198313]
+amount = 30
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 65.6
+initial_velocity_max = 130.55
+angular_velocity_min = 278.45
+angular_velocity_max = 278.45
+linear_accel_min = 9.94
+linear_accel_max = 11.05
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_du648")
+color = Color(1, 0.8833333, 0, 1)

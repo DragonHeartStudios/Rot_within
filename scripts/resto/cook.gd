@@ -1,18 +1,19 @@
 extends Button
 
-# Référance vers la grille de la planche
+# Référence vers la grille de la planche
 @onready var planche_grid: GridContainer = $"../planche/PlancheGrid"
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 # --- LE COIN DES RECETTES ---
 # Ingrédients TOUJOURS dans l'ordre alphabétique à gauche !
 const RECETTES = {
 	# --- 3 Ingrédients ---
-	["concombre", "salade", "tomate"]: "res://scenes/resto/plat/salade_concombre_tomates.tscn",
+	["cucumber", "lettuce", "tomato"]: "res://scenes/resto/plat/salade_concombre_tomates.tscn",
 	
 	# --- 4 Ingrédients ---
-	["fromage", "pain_burger", "salade", "viande_cuite"]: "res://scenes/resto/plat/burger.tscn",
-	["baguette", "fromage", "salade", "tomate"]: "res://scenes/resto/plat/sandwich.tscn",
-	["fromage", "oeuf"]: "res://scenes/resto/plat/omelette_fromage.tscn",
+	["buns", "cheese", "cooked patty", "lettuce"]: "res://scenes/resto/plat/burger.tscn",
+	["baguette", "cheese", "lettuce", "tomato"]: "res://scenes/resto/plat/sandwich.tscn",
+	["cheese", "egg"]: "res://scenes/resto/plat/omelette_fromage.tscn",
 }
 
 func _on_pressed() -> void:
@@ -21,9 +22,16 @@ func _on_pressed() -> void:
 		print("La planche est vide !")
 		return
 
+	# Variable pour savoir si la recette contient de la radioactivité
+	var est_radioactif: bool = false
+
 	# 1. On liste les groupes des ingrédients présents sur la planche
 	var sur_la_planche = []
 	for item in ingredients:
+		# --- NOUVEAU : On vérifie si cet ingrédient précis est radioactif ---
+		if item.is_in_group("Radioactive"):
+			est_radioactif = true
+		
 		# On liste tous les groupes du nœud (ex: ["tomate"])
 		var groupes_de_l_item = item.get_groups()
 		
@@ -50,8 +58,17 @@ func _on_pressed() -> void:
 		var scene_du_plat = load(chemin_du_plat)
 		if scene_du_plat:
 			var nouveau_plat = scene_du_plat.instantiate()
+			if est_radioactif:
+				nouveau_plat.add_to_group("Radioactive")
 			planche_grid.add_child(nouveau_plat)
 			planche_grid.move_child(nouveau_plat, 0)
-			print("Plat préparé avec succès ! 🎉")
+			audio_stream_player.play()
+			
+			# --- NOUVEAU : Si un ingrédient l'était, le plat devient radioactif ! ---
+			if est_radioactif:
+				print("Plat préparé avec succès... et il brille dans le noir ! ☢️🎉")
+			else:
+				print("Plat préparé avec succès ! 🎉")
+			
 	else:
 		print("Recette inconnue pour ces groupes : ", sur_la_planche)

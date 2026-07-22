@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://d1vq2e1t4lb3d" path="res://scripts/resto/obj.gd" id="2_r3y73"]
 
 [node name="sandwich" type="TextureRect" unique_id=976596502 groups=["sandwich"]]
+texture_filter = 1
 offset_right = 43.0
 offset_bottom = 45.0
+tooltip_text = "Sandwich"
 texture = ExtResource("1_nu864")
 script = ExtResource("2_r3y73")
