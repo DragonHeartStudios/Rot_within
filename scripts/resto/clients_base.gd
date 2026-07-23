@@ -40,13 +40,14 @@ var commands_clients: Dictionary = {
 	"sandwich": 13.5
 }
 
-@export var vitesse_timer: float = 5.0
+var vitesse_timer: float
 var valeur_max: float = 100.0
 var en_attente: bool = true
 var command = ""
 var prix_de_la_commande : int = 0 
 
 func _ready() -> void:
+	vitesse_timer = GameManager.speed_customers
 	randomize()
 	# 1. Sélection de l'apparence via AnimatedSprite2D
 	var toutes_les_animations = Array(animated_sprite.sprite_frames.get_animation_names())
@@ -165,7 +166,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 			GameManager.argent += prix_de_la_commande
 			var xp_gagner = randi_range(8, 15)
 			GameManager.xp += xp_gagner
-			GameManager.salair_brute += prix_de_la_commande
+			GameManager.salair_brute += prix_de_la_commande + GameManager.tips
 			GameManager.energy -= GameManager.fatigue
 			
 			bonne_command.play()

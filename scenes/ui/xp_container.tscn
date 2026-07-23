@@ -2,25 +2,63 @@
 
 [ext_resource type="Texture2D" uid="uid://wwc8ox1w7ru5" path="res://assets/sprites/UI/3977850.png" id="1_ond81"]
 [ext_resource type="Script" uid="uid://cq8wklg3o54m8" path="res://scripts/xp_container.gd" id="1_p11ts"]
+[ext_resource type="FontFile" uid="uid://b0yoxjn8de20s" path="res://resources/fonts/Nunito/static/Nunito-SemiBoldItalic(2).ttf" id="2_vfkdb"]
+[ext_resource type="AudioStream" uid="uid://cyd5hvpnjr0fn" path="res://assets/audio/sfx/xp_minecraft.mp3" id="3_by8np"]
+
+[sub_resource type="Curve" id="Curve_by8np"]
+_data = [Vector2(0.00024131313, 0), 0.0, 2.4575944, 0, 0, Vector2(1, 1), 0.49931926, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vfkdb"]
+random_pitch = 1.090004
+streams_count = 1
+stream_0/stream = ExtResource("3_by8np")
 
 [node name="xpContainer" type="HBoxContainer" unique_id=1140490501]
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 2
 script = ExtResource("1_p11ts")
+custom_curve = SubResource("Curve_by8np")
+min_sound_interval = 0.05
 
 [node name="xp" type="Label" parent="." unique_id=421156310]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.083333254, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_vfkdb")
 text = "3457"
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2121820881]
+[node name="image" type="Control" parent="." unique_id=63954000]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="image" unique_id=2121820881]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -12.5
+offset_right = 12.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_ond81")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1939941906]
+stream = SubResource("AudioStreamRandomizer_vfkdb")
+volume_db = -20.827
+max_polyphony = 8

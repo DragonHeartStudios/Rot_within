@@ -3,6 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://d2ean8r6b5gf1" path="res://resources/themes/panel_box_flat.tres" id="1_bwxl3"]
 [ext_resource type="Texture2D" uid="uid://ceppreq0nohbc" path="res://assets/sprites/UI/green-energy.png" id="2_a0fxn"]
 [ext_resource type="Script" uid="uid://dexbthixn0nnw" path="res://scripts/upgrade_bar.gd" id="2_e7tg4"]
+[ext_resource type="AudioStream" uid="uid://cpgjgx3n0cl0e" path="res://assets/audio/sfx/upgrade.mp3" id="4_e7tg4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7tg4"]
 content_margin_left = 2.0
@@ -31,6 +32,11 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 corner_detail = 6
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f2kbl"]
+random_pitch = 1.0637555
+streams_count = 1
+stream_0/stream = ExtResource("4_e7tg4")
 
 [node name="upgrade_energie" type="Panel" unique_id=1013446982]
 custom_minimum_size = Vector2(481.365, 50.985)
@@ -80,6 +86,7 @@ custom_minimum_size = Vector2(257.715, 26.435)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_e7tg4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_f2kbl")
 max_value = 5.0
@@ -112,6 +119,11 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
+mouse_filter = 1
 text = "upgrade"
+
+[node name="upgrade_sound" type="AudioStreamPlayer" parent="." unique_id=745793542]
+stream = SubResource("AudioStreamRandomizer_f2kbl")
+volume_db = -15.915
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/buy" to="." method="_on_buy_pressed"]

@@ -14,14 +14,14 @@ var energy : int = 100: # l'energie qu'on a le premier jour
 		energy = nouvelle_valeur # 1. On applique le changement de valeur
 		energy_update.emit()               # 2. On appelle ta fonction !
 
-var max_energie := 100.0
+var max_energy : int = 100
 
 var argent : float = 25.50: #l'agrent qu'on a le premier jour
 	set(nouvelle_valeur):
 		argent = nouvelle_valeur # 1. On applique le changement de valeur
 		argent_update.emit()               # 2. On appelle ta fonction !
 
-var xp : int = 645 # point d'experience du joueur
+var xp : int = 0 # point d'experience du joueur
 # --- VARIABLES DE FACTURE ---
 var salair_brute := 0.0
 var prix_des_ingredient := 0.0
@@ -52,6 +52,10 @@ var first_night := true
 var hight_score_mutant := 0.0
 
 var order_speed : float = 10
+
+var speed_customers : float = 5
+
+var tips := 0
 
 # --- VARIABLES DE MUTATION ---
 var ratio_monstres_demain : float = 0.0

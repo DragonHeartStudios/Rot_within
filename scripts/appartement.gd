@@ -42,8 +42,6 @@ func _ready() -> void:
 			objet.mouse_entered.connect(_on_objet_mouse_entered.bind(mat))
 			objet.mouse_exited.connect(_on_objet_mouse_exited.bind(mat))
 
-
-
 func _on_letter_pressed() -> void:
 	var lettre_scn = preload("res://scenes/lettre.tscn")
 	var lettre = lettre_scn.instantiate()
@@ -58,14 +56,12 @@ func _on_objet_mouse_exited(mat: ShaderMaterial) -> void:
 	if mat:
 		mat.set_shader_parameter("line_thickness", 0.0) # On éteint
 
-
 func on_dormir_pressed() -> void:
 	if GameManager.energy == 0:
 		animation_player.play("new_animation")
 		await animation_player.animation_finished
-		GameManager.energy = 100
+		GameManager.energy = GameManager.max_energy
 		GameManager.day += 1
-
 
 func _on_porte_pressed() -> void:
 	$UI/map.show()

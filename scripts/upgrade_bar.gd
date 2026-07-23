@@ -1,3 +1,4 @@
+class_name UpgradePanel
 extends Panel
 
 # --- Signaux (Optionnel mais très pratique) ---
@@ -11,12 +12,14 @@ signal upgrade_applied(valeur_a_changer: String, new_value: int)
 @onready var lvl_label: Label = $MarginContainer/HBoxContainer/lvl_ProgressBar/lvl_Label
 @onready var price_Label: Label = $MarginContainer/HBoxContainer/price
 @onready var buy_Button: Button = $MarginContainer/HBoxContainer/buy
+@onready var upgrade_sound: AudioStreamPlayer = $upgrade_sound
+
 
 # --- Configuration de l'Upgrade ---
 @export var titre : String
 @export var image : Texture
 @export var price : int = 100
-@export var lvl_max : int = 5
+@export var lvl_max : int = 5	
 
 @export_subgroup("valeur")
 @export var valeur_a_lvl_zero : int = 20
@@ -44,14 +47,27 @@ func update_ui():
 	lvl_label.text = str("LVL ", lvl, "/", lvl_max)
 	price_Label.text = str("-", price, " XP")
 
+func spawn_effect():
+	var effect = preload("res://scenes/confetti.tscn").instantiate()
+	buy_Button.add_child(effect)
+
+	effect.position = buy_Button.size / 2.0
+
+	await get_tree().create_timer(1.0).timeout
+
+	effect.queue_free()
+	
 func _on_buy_pressed() -> void:
 	if GameManager.xp < price or lvl >= lvl_max:
 		return
 		
+	#confetti
+	spawn_effect()
+	upgrade_sound.play()
 	# 1. Paiement et montée en niveau
 	GameManager.xp -= price
 	lvl += 1
-	price += 25
+	price += 15
 	
 	# 2. Calcul mathématique de la nouvelle valeur (Lerp)
 	# On convertit en float pour avoir un chiffre à virgule (ex: 3.0 / 5.0 = 0.6 soit 60%)
@@ -72,3 +88,34 @@ func _on_buy_pressed() -> void:
 		
 	# On émet aussi le signal au cas où d'autres scripts voudraient réagir (ex: jouer un son)
 	upgrade_applied.emit(valeur_a_changer, value)
+	
+	
+func get_next_value() -> int:
+	var next_lvl = min(lvl + 1, lvl_max)
+	var ratio = float(next_lvl) / float(lvl_max)
+	return int(lerp(float(valeur_a_lvl_zero), float(valeur_a_lvl_max), ratio))
+
+#animation over
+@export var scale_hover: Vector2 = Vector2(1.05, 1.05) # +5% de taille
+@export var duration: float = 0.15
+
+var tween: Tween
+
+func _notification(what: int) -> void:
+	match what:
+		# Détecté automatiquement quand la souris entre
+		NOTIFICATION_MOUSE_ENTER:
+			pivot_offset = size / 2.0 # Recentre le pivot au survol
+			_animate_scale(scale_hover)
+			
+		# Détecté automatiquement quand la souris sort
+		NOTIFICATION_MOUSE_EXIT:
+			_animate_scale(Vector2.ONE)
+
+# Fonction d'animation réutilisable
+func _animate_scale(target_scale: Vector2) -> void:
+	if tween:
+		tween.kill()
+		
+	tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", target_scale, duration)

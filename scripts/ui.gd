@@ -18,15 +18,39 @@ extends Control
 @onready var energie_label: Label = $MarginContainer/header/MarginContainer/HBoxContainer/HBoxContainer/energie/energie_Label
 
 var economie := 0.0
-var tween_clignotement: Tween # Variable pour stocker et contrôler notre animation de clignotement
+var tween_clignotement: Tween
+
+# --- AFFICHAGE DE L'ARGENT ET ANIMATION ---
+@export var animation_duration: float = 0.8
+@export var custom_curve: Curve
+
+var start_argent: float = 0.0
+var target_argent: float = 0.0
+var display_argent: float = 0.0
+
+var start_dette: float = 0.0
+var target_dette: float = 0.0
+var display_dette: float = 0.0
+
+var tween: Tween
+
 
 func _ready() -> void:
+	# 1. On synchronise directement le texte AVANT d'écouter les signaux
+	display_argent = GameManager.argent
+	target_argent = GameManager.argent
+	display_dette = GameManager.dette
+	target_dette = GameManager.dette
+	_update_text()
+
+	# 2. On connecte les signaux
 	GameManager.argent_update.connect(_on_argent_update)
 	GameManager.energy_update.connect(_on_energy_update)
 	GameManager.day_update.connect(_on_day_update)
-	_on_argent_update()
+	
 	_on_energy_update()
 	_on_day_update()
+	
 	popup_chois.visible = false
 	day_finiched.visible = false
 	fin.visible = false
@@ -37,71 +61,84 @@ func _ready() -> void:
 		GameManager.first_night = false
 	else:
 		aide_dormir.hide()
-	
-func _process(_delta: float) -> void:
-	energie.max_value = GameManager.max_energie
-	
-# affichage de l'argent
-func _on_argent_update():
-	dettte.text = "%.2f $ / %.2f $ Debt" % [GameManager.argent, GameManager.dette]
 
-func _on_energy_update():
+
+func _process(_delta: float) -> void:
+	energie.max_value = GameManager.max_energy
+
+
+func _on_energy_update() -> void:
 	energie.value = GameManager.energy
 	energie_label.text = str(GameManager.energy)
 	
 	# --- SYSTÈME DE CLIGNOTEMENT ---
 	if GameManager.energy <= 0:
-		# Si l'animation ne tourne pas déjà, on la lance
 		if tween_clignotement == null or not tween_clignotement.is_running():
 			_lancer_clignotement()
 	else:
-		# Si l'énergie est revenue, on arrête le clignotement et on remet la barre opaque
 		if tween_clignotement != null:
-			tween_clignotement.kill() # Détruit l'animation en cours
-		h_box_container.modulate.a = 1.0 # Remet l'opacité normale à 100%
+			tween_clignotement.kill()
+		h_box_container.modulate.a = 1.0
 
-func _lancer_clignotement():
-	# On crée un nouveau Tween
+
+func _lancer_clignotement() -> void:
 	tween_clignotement = create_tween()
-	
-	# On lui dit de boucler à l'infini
 	tween_clignotement.set_loops()
 	
-	# Étape 1 : On descend l'opacité (alpha) à 0.2 en 0.4 seconde
 	tween_clignotement.tween_property(h_box_container, "modulate:a", 0.2, 0.4)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_IN_OUT)
 		
-	# Étape 2 : On remonte l'opacité à 1.0 en 0.4 seconde
 	tween_clignotement.tween_property(h_box_container, "modulate:a", 1.0, 0.4)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_IN_OUT)
 
-func _on_day_update():
-	#chaque matin...
-	jours.text = str("Day ",GameManager.day,"/",GameManager.echeance)#on actuallise le jours
-	economie = GameManager.argent #on actuallise l'economie
+
+func _on_day_update() -> void:
+	jours.text = str("Day ", GameManager.day, "/", GameManager.echeance)
+	economie = GameManager.argent
 	lb_economie.text = "%.2f $" % GameManager.argent
-	GameManager.salair_brute = 0.0 #on reinitialise le salaire brute
+	GameManager.salair_brute = 0.0
 	GameManager.prix_des_ingredient = 0.0
 	GameManager.client_pas_content = 0
+
 
 func _on_maps_pressed() -> void:
 	map.visible = true
 	sound_map.play()
 
-#func _input(_event: InputEvent) -> void:#cheat !!!!!!!!!!!!!!!
-	#if Input.is_action_just_pressed("interact"):
-		#GameManager.energy -= 10
 
 func _on_ok_pressed() -> void:
 	aide_dormir.hide()
+
+
+# --- ANIMATION DE L'ARGENT ET DE LA DETTE ---
+func _on_argent_update() -> void:
+	# Sécurité : Si l'argent et la dette n'ont pas changé (ex: au chargement), on n'anime PAS
+	if display_argent == GameManager.argent and display_dette == GameManager.dette:
+		return
+
+	if tween:
+		tween.kill()
+		
+	start_argent = display_argent
+	target_argent = GameManager.argent
 	
-#func _process(_delta: float) -> void:# débug
-	## Récupère le composant UI actuellement survolé par la souris
-	#var objet_survole = get_viewport().gui_get_hovered_control()
-	#
-	#if objet_survole:
-		#print("La souris touche l'UI : ", objet_survole.name, " (Type: ", objet_survole.get_class(), ")")
-	#else:
-		#print("La souris ne touche aucun élément d'UI")
+	start_dette = display_dette
+	target_dette = GameManager.dette
+	
+	tween = create_tween()
+	tween.tween_method(_update_step, 0.0, 1.0, animation_duration)
+
+
+func _update_step(progress: float) -> void:
+	var weight = custom_curve.sample(progress) if custom_curve else progress
+	
+	display_argent = lerp(start_argent, target_argent, weight)
+	display_dette = lerp(start_dette, target_dette, weight)
+	
+	_update_text()
+
+
+func _update_text() -> void:
+	dettte.text = "%.2f $ / %.2f $ Debt" % [display_argent, display_dette]

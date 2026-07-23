@@ -48,7 +48,11 @@
 [ext_resource type="AudioStream" uid="uid://beajyst13dny1" path="res://assets/audio/sfx/MA_PaulaSounds_UIMechanisem_Futuristic, SciFi, Openup, Menu.wav" id="38_16ylw"]
 [ext_resource type="PackedScene" uid="uid://cmwyf5caas86p" path="res://scenes/ui/upgrade_bar.tscn" id="44_27jr1"]
 [ext_resource type="PackedScene" uid="uid://bm0be3yueyyx" path="res://scenes/ui/xp_container.tscn" id="46_rm5pp"]
-[ext_resource type="Texture2D" uid="uid://dbyx2oyn21kvo" path="res://assets/sprites/UI/niveau(1).png" id="47_27jr1"]
+[ext_resource type="Texture2D" uid="uid://evgxhrpxlhqw" path="res://assets/sprites/UI/shopping-bag.png" id="48_rm5pp"]
+[ext_resource type="Texture2D" uid="uid://baqkolmdtagul" path="res://assets/sprites/UI/deadline.png" id="49_qvexf"]
+[ext_resource type="Texture2D" uid="uid://byjloin4x0jf" path="res://assets/sprites/UI/financial-profit.png" id="50_tb54x"]
+[ext_resource type="Script" uid="uid://bjgynftduv8jb" path="res://scripts/description_upgrade.gd" id="51_uaogu"]
+[ext_resource type="FontFile" uid="uid://c1s2v7jhpj8le" path="res://resources/fonts/static/Nunito-Italic.ttf" id="52_mq5dp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xgj0s"]
 shader = ExtResource("6_mrx88")
@@ -1068,7 +1072,7 @@ horizontal_alignment = 1
 layout_mode = 2
 mouse_filter = 0
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 59
+theme_override_constants/margin_top = 35
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
@@ -1079,37 +1083,105 @@ theme_override_constants/separation = 12
 [node name="xpContainer" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer" unique_id=1140490501 instance=ExtResource("46_rm5pp")]
 layout_mode = 2
 
-[node name="upgradContainer" type="HBoxContainer" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer" unique_id=317054735]
+[node name="HBoxContainer" type="HBoxContainer" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer" unique_id=366604166]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="upgradContainer" type="HBoxContainer" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=317054735]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("19_b0cgc")
 theme_override_constants/separation = 24
 
-[node name="buy_sound" type="AudioStreamPlayer" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/upgradContainer" unique_id=2021421954]
+[node name="buy_sound" type="AudioStreamPlayer" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer" unique_id=2021421954]
 stream = ExtResource("30_8bi4g")
 volume_db = -18.255
 
-[node name="VBoxContainer" type="VBoxContainer" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/upgradContainer" unique_id=322071075]
+[node name="VBoxContainer" type="VBoxContainer" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer" unique_id=322071075]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="upgrade_energie" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/upgradContainer/VBoxContainer" unique_id=1013446982 instance=ExtResource("44_27jr1")]
+[node name="upgrade_energie" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=1013446982 instance=ExtResource("44_27jr1")]
 layout_mode = 2
+titre = "Energy Capacity +10%"
 valeur_a_lvl_zero = 100
 valeur_a_lvl_max = 150
-valeur_a_changer = "max_energie"
+valeur_a_changer = "max_energy"
 
-[node name="upgrade_order_speed" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/upgradContainer/VBoxContainer" unique_id=1228951149 instance=ExtResource("44_27jr1")]
+[node name="upgrade_order_speed" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=1228951149 instance=ExtResource("44_27jr1")]
 layout_mode = 2
-titre = "les command reste 25% de temps en plus"
-image = ExtResource("47_27jr1")
+titre = "Orders stay 25% longer"
+image = ExtResource("48_rm5pp")
 price = 120
 valeur_a_lvl_zero = 10
 valeur_a_lvl_max = 25
 valeur_a_changer = "order_speed"
 
-[node name="upgrade_energie3" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/upgradContainer/VBoxContainer" unique_id=1296697997 instance=ExtResource("44_27jr1")]
+[node name="patiance_des_client" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=1296697997 instance=ExtResource("44_27jr1")]
 layout_mode = 2
+titre = "Patient Customers"
+image = ExtResource("49_qvexf")
+valeur_a_lvl_zero = 5
+valeur_a_lvl_max = 2
+valeur_a_changer = "speed_customers"
+
+[node name="client_te_pay_plus" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=335944755 instance=ExtResource("44_27jr1")]
+layout_mode = 2
+titre = "Higher Tips"
+image = ExtResource("50_tb54x")
+price = 130
+valeur_a_lvl_zero = 0
+valeur_a_lvl_max = 10
+valeur_a_changer = "tips"
+
+[node name="description_upgrade" type="PanelContainer" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=781378739 node_paths=PackedStringArray("panels")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_n7uw1")
+script = ExtResource("51_uaogu")
+panels = [NodePath("../upgradContainer/VBoxContainer/upgrade_energie"), NodePath("../upgradContainer/VBoxContainer/upgrade_order_speed"), NodePath("../upgradContainer/VBoxContainer/patiance_des_client"), NodePath("../upgradContainer/VBoxContainer/client_te_pay_plus")]
+
+[node name="MarginContainer" type="MarginContainer" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade" unique_id=239001765]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="titre_Label" type="Label" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade/MarginContainer" unique_id=2111101799]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Plus 10% d'énergie"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade/MarginContainer/titre_Label" unique_id=588648423]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="description_Label" type="Label" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade/MarginContainer" unique_id=138508366]
+custom_minimum_size = Vector2(210, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("52_mq5dp")
+theme_override_font_sizes/font_size = 13
+text = "vous allez passer la vitesse de caca de 5 a 8 kfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfd"
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade/MarginContainer/description_Label" unique_id=623660882]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="close" type="Button" parent="upgrade/PanelContainer/MarginContainer" unique_id=1601282088 node_paths=PackedStringArray("node")]
 modulate = Color(1, 0, 0, 1)
@@ -1141,8 +1213,8 @@ layout_mode = 1
 [connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/radioactife/Button9" to="shop/PanelContainer/MarginContainer/GridContainer/radioactife/Button9" method="_on_pressed"]
 [connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/radioactife/Button11" to="shop/PanelContainer/MarginContainer/GridContainer/radioactife/Button11" method="_on_pressed"]
 [connection signal="pressed" from="shop/PanelContainer/MarginContainer/close" to="shop/PanelContainer/MarginContainer/close" method="_on_pressed"]
+[connection signal="focus_entered" from="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer/upgrade_energie" to="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade" method="_on_upgrade_energie_focus_entered"]
+[connection signal="focus_entered" from="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer/upgrade_order_speed" to="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade" method="_on_upgrade_order_speed_focus_entered"]
+[connection signal="focus_entered" from="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer/patiance_des_client" to="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade" method="_on_patiance_des_client_focus_entered"]
+[connection signal="focus_entered" from="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer/client_te_pay_plus" to="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade" method="_on_client_te_pay_plus_focus_entered"]
 [connection signal="pressed" from="upgrade/PanelContainer/MarginContainer/close" to="upgrade/PanelContainer/MarginContainer/close" method="_on_pressed"]
-
-[editable path="upgrade/PanelContainer/MarginContainer/VBoxContainer/upgradContainer/VBoxContainer/upgrade_energie"]
-[editable path="upgrade/PanelContainer/MarginContainer/VBoxContainer/upgradContainer/VBoxContainer/upgrade_order_speed"]
-[editable path="upgrade/PanelContainer/MarginContainer/VBoxContainer/upgradContainer/VBoxContainer/upgrade_energie3"]
