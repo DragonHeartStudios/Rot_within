@@ -29,6 +29,7 @@ const LANGUES := [
 const TEXTES := {
 
 # --- MENU PRINCIPAL ---
+
 "MENU_START": {
 	"en": "Press here to start",
 	"fr": "Appuyez ici pour commencer",
@@ -43,7 +44,13 @@ const TEXTES := {
 	"de": "Sprache",
 	"ru": "Язык",
 },
-
+"MENU_CREDIT": {
+	"en": "Credit",
+	"fr": "Crédit",
+	"es": "Crédit",
+	"de": "Crédit",
+	"ru": "Crédit",
+},
 # --- BOUTONS COMMUNS ---
 "UI_CLOSE": {
 	"en": "close",
@@ -523,11 +530,11 @@ const TEXTES := {
 	"ru": "Еда",
 },
 "RESTO_TIP_SHIFT": {
-	"en": "\nShift + Left click to move items quickly",
-	"fr": "\nMaj + clic gauche pour déplacer les objets rapidement",
-	"es": "\nMayús + clic izquierdo para mover objetos rápidamente",
-	"de": "\nUmschalt + Linksklick, um Gegenstände schnell zu bewegen",
-	"ru": "\nShift + левый клик — быстро переместить предмет",
+	"en": "Shift + Left click to move items quickly",
+	"fr": "Maj + clic gauche pour déplacer les objets rapidement",
+	"es": "Mayús + clic izquierdo para mover objetos rápidamente",
+	"de": "Umschalt + Linksklick, um Gegenstände schnell zu bewegen",
+	"ru": "Shift + левый клик — быстро переместить предмет",
 },
 
 # --- LIVRE DE RECETTES ---

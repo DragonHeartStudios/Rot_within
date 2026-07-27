@@ -413,12 +413,27 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("5_n7uw1")
 
-[node name="Label" type="Label" parent="right_menu/frigo" unique_id=1235786995]
+[node name="VBoxContainer" type="VBoxContainer" parent="right_menu/frigo" unique_id=1115095923]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 17
+theme_override_constants/separation = -3
+
+[node name="Label" type="Label" parent="right_menu/frigo/VBoxContainer" unique_id=1235786995]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 15
 text = "FRIDGE_TITLE"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="tips" type="Label" parent="right_menu/frigo/VBoxContainer" unique_id=1667564364]
+custom_minimum_size = Vector2(40, 5)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+text = "RESTO_TIP_SHIFT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="right_menu/frigo" unique_id=1336149543]
 layout_mode = 2
@@ -565,14 +580,6 @@ script = ExtResource("3_3fn6y")
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_top = 113
-
-[node name="tips" type="Label" parent="right_menu/frigo" unique_id=1667564364]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 12
-text = "RESTO_TIP_SHIFT"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="right_menu" unique_id=407535654]
 custom_minimum_size = Vector2(0, 39.005)
@@ -1004,6 +1011,7 @@ node = NodePath("../../..")
 
 [node name="upgrade" type="MarginContainer" parent="." unique_id=306970370]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1064,7 +1072,6 @@ theme_override_constants/separation = 20
 
 [node name="upgrade_energie" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=1013446982 instance=ExtResource("44_27jr1")]
 layout_mode = 2
-titre = "UPGRADE_ENERGY"
 valeur_a_lvl_zero = 100
 valeur_a_lvl_max = 150
 valeur_a_changer = "max_energy"

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c483r7jh1patj"
-path="res://.godot/imported/moiii muté.png-256fbf05d4e647f155450708e5b236e1.ctex"
+path="res://.godot/imported/moiii muté.png-fca4209cc2eedb3a5bd8980956f59d5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/mutant/moiii muté.png"
-dest_files=["res://.godot/imported/moiii muté.png-256fbf05d4e647f155450708e5b236e1.ctex"]
+source_file="res://assets/sprites/resto/clients/mutant/moiii muté.png"
+dest_files=["res://.godot/imported/moiii muté.png-fca4209cc2eedb3a5bd8980956f59d5d.ctex"]
 
 [params]
 

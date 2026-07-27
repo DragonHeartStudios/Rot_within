@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b225xytgqwt1s"
-path="res://.godot/imported/perso lémanMUTé.png-e86d435f034018a244e6dec30a22faf4.ctex"
+path="res://.godot/imported/perso lémanMUTé.png-86fb1eca71cca151849415921e510ed7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/mutant/perso lémanMUTé.png"
-dest_files=["res://.godot/imported/perso lémanMUTé.png-e86d435f034018a244e6dec30a22faf4.ctex"]
+source_file="res://assets/sprites/resto/clients/mutant/perso lémanMUTé.png"
+dest_files=["res://.godot/imported/perso lémanMUTé.png-86fb1eca71cca151849415921e510ed7.ctex"]
 
 [params]
 

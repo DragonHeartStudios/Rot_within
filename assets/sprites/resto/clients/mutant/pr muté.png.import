@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hbccpxm4g2c"
-path="res://.godot/imported/pr muté.png-9d578861770a402bf427ad62f2296ce4.ctex"
+path="res://.godot/imported/pr muté.png-3a0d2ed75ff680ab92c0ac6d1341653b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/mutant/pr muté.png"
-dest_files=["res://.godot/imported/pr muté.png-9d578861770a402bf427ad62f2296ce4.ctex"]
+source_file="res://assets/sprites/resto/clients/mutant/pr muté.png"
+dest_files=["res://.godot/imported/pr muté.png-3a0d2ed75ff680ab92c0ac6d1341653b.ctex"]
 
 [params]
 

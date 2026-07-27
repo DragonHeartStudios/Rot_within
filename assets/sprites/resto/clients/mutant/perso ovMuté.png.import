@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnxx7nqqmin0j"
-path="res://.godot/imported/perso ovMuté.png-7e03fbf5883b3b1800ff51b201e4685f.ctex"
+path="res://.godot/imported/perso ovMuté.png-65fb2196f09dc56f971d8d11a688554b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/mutant/perso ovMuté.png"
-dest_files=["res://.godot/imported/perso ovMuté.png-7e03fbf5883b3b1800ff51b201e4685f.ctex"]
+source_file="res://assets/sprites/resto/clients/mutant/perso ovMuté.png"
+dest_files=["res://.godot/imported/perso ovMuté.png-65fb2196f09dc56f971d8d11a688554b.ctex"]
 
 [params]
 
