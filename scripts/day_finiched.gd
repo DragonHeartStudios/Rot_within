@@ -46,7 +46,7 @@ func day_finished() -> void:
 			couleur_total = "red"
 			
 		# On utilise 'total_propre' à la place de 'total_gagne_aujourdhui' pour le texte
-		totale.text = str("Total : [color=", couleur_total, "]", total_propre, " $[/color]")
+		totale.text = tr("RECEIPT_TOTAL_FORMAT") % [couleur_total, total_propre]
 			
 		# 5. SYSTÈME DES FINS (Ton arborescence de choix est super !)
 		if GameManager.argent <= 0:

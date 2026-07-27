@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Rot within"
 run/main_scene="uid://vqfuv5ljitp3"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/stretch_mode=0
 boot_splash/image="uid://drno3vfsq81b1"
@@ -29,6 +29,7 @@ buses/default_bus_layout="uid://c4ksoe283o11d"
 
 [autoload]
 
+Localization="*res://scripts/Localization.gd"
 GameManager="*uid://cljtm2lcpkcc8"
 Music="*uid://bl47vtkvnhi54"
 

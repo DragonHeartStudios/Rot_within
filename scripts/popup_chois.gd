@@ -6,12 +6,14 @@ signal choix_effectue(id_choix: int, texte_choix: String)
 @onready var hbox_reponses: HBoxContainer = $panel/HBoxContainer
 
 # --- LES ÉVÉNEMENTS EXCLUSIFS DE "ROT WITHIN" ENRICHIS --- ne surout pas mettre mois d'evenement que le nombre de l'échéence sinon bug
+# "question" et "choix" contiennent des clés de traduction : le vrai texte de
+# chaque langue se trouve dans scripts/Localization.gd.
 const EVENEMENTS_DU_JEU = {
 	1: {
-		"question": "While cleaning a restaurant table, [b]Decker[/b] finds a forgotten wallet containing [color=yellow]$50[/color]. What do you do?",
+		"question": "EVENT_1_Q",
 		"choix": [
-			"Steal money (+$50 | Dishonest)",
-			"Put it aside (+1 Honesty)"
+			"EVENT_1_A1",
+			"EVENT_1_A2"
 		],
 		"consequences": [
 			{"argent": 50.0, "honnetete": -2, "dette": 0, "fatigue": 0, "temps_verification": 4.0, "radioactif": false, "vider_frigo": false},
@@ -19,10 +21,10 @@ const EVENEMENTS_DU_JEU = {
 		]
 	},
 	2: {
-		"question": "[b]Henkins[/b] stops by the restaurant and whispers: [i]“Replace the premium ingredients with radioactive ones. Customers won't notice a thing.”[/i]",
+		"question": "EVENT_2_Q",
 		"choix": [
-			"Accept deal (Radioactive ON | Fast customers)",
-			"Refuse flat out (+2 Honesty | Patient customers)"
+			"EVENT_2_A1",
+			"EVENT_2_A2"
 		],
 		"consequences": [
 			{"argent": 20.0, "honnetete": -3, "dette": 0, "fatigue": 0, "temps_verification": 2.5, "radioactif": true, "vider_frigo": false}, 
@@ -30,10 +32,10 @@ const EVENEMENTS_DU_JEU = {
 		]
 	},
 	3: {
-		"question": "On your way home, a weak homeless man is sleeping near your building. A [color=yellow]$15[/color] bill is sticking out of his pocket...",
+		"question": "EVENT_3_Q",
 		"choix": [
-			"Rob the man (+$15)",
-			"Give him leftovers (Empty fridge | +3 Honesty)"
+			"EVENT_3_A1",
+			"EVENT_3_A2"
 		],
 		"consequences": [
 			{"argent": 15.0, "honnetete": -2, "dette": 0, "fatigue": 0, "temps_verification": 4.0, "radioactif": false, "vider_frigo": false},
@@ -41,10 +43,10 @@ const EVENEMENTS_DU_JEU = {
 		]
 	},
 	4: {
-		"question": "A panicked customer returns. She claims you gave her wrong change and demands [color=red]$50[/color]. You know it's a lie.",
+		"question": "EVENT_4_Q",
 		"choix": [
-			"Lie aggressively (+ Fatigue)",
-			"Refund her (-$50 | Avoid drama)"
+			"EVENT_4_A1",
+			"EVENT_4_A2"
 		],
 		"consequences": [
 			{"argent": 0.0, "honnetete": -1, "dette": 0, "fatigue": 2, "temps_verification": 4.0, "radioactif": false, "vider_frigo": false},
@@ -52,10 +54,10 @@ const EVENEMENTS_DU_JEU = {
 		]
 	},
 	5: {
-		"question": "Henkins' ledger is sitting on the table. You could forge his signature to magically erase part of your debt.",
+		"question": "EVENT_5_Q",
 		"choix": [
-			"Forge ledger (-$50 Debt!)",
-			"Stay honest with Henkins"
+			"EVENT_5_A1",
+			"EVENT_5_A2"
 		],
 		"consequences": [
 			{"argent": 0.0, "honnetete": -4, "dette": -50, "fatigue": 0, "temps_verification": 4.0, "radioactif": false, "vider_frigo": false},
@@ -63,10 +65,10 @@ const EVENEMENTS_DU_JEU = {
 		]
 	},
 	6: {
-		"question": "A coworker left his day's pay on the counter: [color=yellow]$30[/color]. He just went to the restroom.",
+		"question": "EVENT_6_Q",
 		"choix": [
-			"Take cash quietly (+$30)",
-			"Wait. Make a friend (-1 Fatigue tomorrow)"
+			"EVENT_6_A1",
+			"EVENT_6_A2"
 		],
 		"consequences": [
 			{"argent": 30.0, "honnetete": -2, "dette": 0, "fatigue": 0, "temps_verification": 4.0, "radioactif": false, "vider_frigo": false},
@@ -74,10 +76,10 @@ const EVENEMENTS_DU_JEU = {
 		]
 	},
 	7: {
-		"question": "An elderly lady cannot afford her meal. She is short by [color=red]$15[/color].",
+		"question": "EVENT_7_Q",
 		"choix": [
-			"Pay for her (-$15 | Slower rush tomorrow)",
-			"Turn her away coldly"
+			"EVENT_7_A1",
+			"EVENT_7_A2"
 		],
 		"consequences": [
 			{"argent": -15.0, "honnetete": 2, "dette": 0, "fatigue": 0, "temps_verification": 5.5, "radioactif": false, "vider_frigo": false},
@@ -85,10 +87,10 @@ const EVENEMENTS_DU_JEU = {
 		]
 	},
 	8: {
-		"question": "An anonymous hacker sends you a text: 'I can hack and reduce your debt in exchange for an illegal favor.'",
+		"question": "EVENT_8_Q",
 		"choix": [
-			"Accept deal (-$10 Debt | Insane rush tomorrow)",
-			"Ignore text"
+			"EVENT_8_A1",
+			"EVENT_8_A2"
 		],
 		"consequences": [
 			{"argent": 0.0, "honnetete": -3, "dette": -10, "fatigue": 0, "temps_verification": 1.5, "radioactif": false, "vider_frigo": false},
@@ -96,10 +98,10 @@ const EVENEMENTS_DU_JEU = {
 		]
 	},
 	9: {
-		"question": "Henkins leaves the restaurant exhausted, forgetting his black briefcase full of money on a chair.",
+		"question": "EVENT_9_Q",
 		"choix": [
-			"Steal briefcase (Clear debt! Max Corruption)",
-			"Run after him to return it"
+			"EVENT_9_A1",
+			"EVENT_9_A2"
 		],
 		"consequences": [
 			{"argent": 50.0, "honnetete": -5, "dette": 0, "fatigue": 0, "temps_verification": 4.0, "radioactif": false, "vider_frigo": false},
@@ -107,10 +109,10 @@ const EVENEMENTS_DU_JEU = {
 		]
 	},
 	10: {
-		"question": "It's your last day, right? Give this restaurant a bad reputation and I will pay you well.",
+		"question": "EVENT_10_Q",
 		"choix": [
-			"Accept bribe (+$50)",
-			"Report to the police"
+			"EVENT_10_A1",
+			"EVENT_10_A2"
 		],
 		"consequences": [
 			{"argent": 50.0, "honnetete": -5, "dette": 0, "fatigue": 0, "temps_verification": 4.0, "radioactif": false, "vider_frigo": false},
@@ -132,19 +134,22 @@ func charger_question_du_jour() -> void:
 		return
 		
 	var donnees_evenement = EVENEMENTS_DU_JEU[jour_actuel]
-	lb_question.text = donnees_evenement["question"]
-	
+	lb_question.text = tr(donnees_evenement["question"])
+
 	for enfant in hbox_reponses.get_children():
 		enfant.queue_free()
-		
+
 	for i in range(donnees_evenement["choix"].size()):
-		var texte_choix = donnees_evenement["choix"][i]
-		
+		var cle_du_choix = donnees_evenement["choix"][i]
+
 		var bouton = Button.new()
-		bouton.text = texte_choix
-		bouton.custom_minimum_size.y = 40
-		bouton.pressed.connect(_on_choix_bouton_pressed.bind(i, texte_choix))
-		
+		bouton.text = tr(cle_du_choix)
+		bouton.custom_minimum_size = Vector2(370, 40)
+		# Les traductions sont plus longues que l'anglais : on laisse le libellé
+		# passer à la ligne plutôt que de déborder du panneau.
+		bouton.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		bouton.pressed.connect(_on_choix_bouton_pressed.bind(i, cle_du_choix))
+
 		hbox_reponses.add_child(bouton)
 
 func _on_choix_bouton_pressed(id_choix: int, texte_choix: String) -> void:

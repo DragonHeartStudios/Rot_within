@@ -16,6 +16,8 @@ signal upgrade_applied(valeur_a_changer: String, new_value: int)
 
 
 # --- Configuration de l'Upgrade ---
+# titre = la clé de traduction du nom de l'amélioration (ex: "UPGRADE_TIPS"),
+# pas le texte affiché : c'est tr() qui s'occupe de le traduire.
 @export var titre : String
 @export var image : Texture
 @export var price : int = 100
@@ -32,7 +34,7 @@ var value : int = 0
 var lvl : int = 0
 
 func _ready() -> void:
-	titre_label.text = titre
+	titre_label.text = tr(titre)
 	image_TextureRect.texture = image
 	
 	# Sécurité : on s'assure que la barre de progression a le bon maximum
@@ -44,8 +46,8 @@ func _ready() -> void:
 	
 func update_ui():
 	lvl_progress_bar.value = lvl
-	lvl_label.text = str("LVL ", lvl, "/", lvl_max)
-	price_Label.text = str("-", price, " XP")
+	lvl_label.text = tr("UPGRADE_LVL") % [lvl, lvl_max]
+	price_Label.text = tr("UPGRADE_PRICE") % price
 
 func spawn_effect():
 	var effect = preload("res://scenes/confetti.tscn").instantiate()

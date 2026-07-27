@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ce161iedrks2e" path="res://scripts/menu.gd" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://cjas5yjqp40lw" path="res://assets/textures/affiche_rw.png" id="1_yqeox"]
 [ext_resource type="FontFile" uid="uid://dn6qoun2p3dej" path="res://resources/fonts/static/Nunito-Light.ttf" id="3_con2f"]
+[ext_resource type="Theme" uid="uid://dvc1dki2baxnc" path="res://resources/themes/globale.tres" id="4_lgsel"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhnvy"]
 
@@ -108,10 +109,29 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_mhnvy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_con2f")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_v86rl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_13sgg")
-text = "Presse here to start"
+text = "MENU_START"
+
+[node name="langue" type="OptionButton" parent="." unique_id=1147200631]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -66.0
+offset_right = -28.0
+offset_bottom = -28.0
+grow_horizontal = 0
+grow_vertical = 0
+auto_translate_mode = 2
+tooltip_text = "MENU_LANGUAGE"
+theme = ExtResource("4_lgsel")
+theme_override_font_sizes/font_size = 18
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1524519779]
 libraries/ = SubResource("AnimationLibrary_4ytvr")
 autoplay = &"new_animation"
 
 [connection signal="pressed" from="Button_play" to="." method="_on_button_play_pressed"]
+[connection signal="item_selected" from="langue" to="." method="_on_langue_item_selected"]

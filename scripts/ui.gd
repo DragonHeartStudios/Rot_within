@@ -95,7 +95,7 @@ func _lancer_clignotement() -> void:
 
 
 func _on_day_update() -> void:
-	jours.text = str("Day ", GameManager.day, "/", GameManager.echeance)
+	jours.text = tr("UI_DAY_COUNT") % [GameManager.day, GameManager.echeance]
 	economie = GameManager.argent
 	lb_economie.text = "%.2f $" % GameManager.argent
 	GameManager.salair_brute = 0.0
@@ -141,4 +141,4 @@ func _update_step(progress: float) -> void:
 
 
 func _update_text() -> void:
-	dettte.text = "%.2f $ / %.2f $ Debt" % [display_argent, display_dette]
+	dettte.text = tr("UI_DEBT_FORMAT") % [display_argent, display_dette]

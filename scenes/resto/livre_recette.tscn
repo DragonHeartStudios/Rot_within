@@ -30,7 +30,7 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 21
-text = "book"
+text = "RECIPE_BOOK"
 horizontal_alignment = 1
 
 [node name="fleche_g" type="Button" parent="." unique_id=1199744881]
@@ -76,23 +76,4 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("4_15thk")
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
-text = "[b][color=chocolate]BURGER:[/color][/b]
-[indent]• Buns
-• Cheese
-• Meat
-• Lettuce[/indent]
-
-[b][color=yellow]Cheese omelette:[/color][/b]
-[indent]• Cheese
-• Egg[/indent]
-
-[b][color=green]MIXED SALAD:[/color][/b]
-[indent]• Tomato
-• Lettuce
-• Cucumber[/indent]
-
-[b][color=burlywood]SANDWICH:[/color][/b]
-[indent]• Baguette
-• Cheese
-• Tomato
-• Lettuce[/indent]"
+text = "RECIPE_BOOK_TEXT"

@@ -40,6 +40,16 @@ var commands_clients: Dictionary = {
 	"sandwich": 13.5
 }
 
+# Nom affiché de chaque plat. Attention : la clé de gauche est l'identifiant
+# interne, celui qu'on compare aux groupes des plats préparés — il ne doit
+# JAMAIS être traduit, sinon les livraisons ne sont plus reconnues.
+const CLES_DES_PLATS := {
+	"burger": "DISH_BURGER",
+	"cheese omelette": "DISH_CHEESE_OMELETTE",
+	"mixed salad": "DISH_MIXED_SALAD",
+	"sandwich": "DISH_SANDWICH",
+}
+
 var vitesse_timer: float
 var valeur_max: float = 100.0
 var en_attente: bool = true
@@ -74,9 +84,9 @@ func _ready() -> void:
 	var commands_aleatoire = plats_disponibles.pick_random()
 	
 	command = commands_aleatoire
-	lb_command.text = command
+	lb_command.text = CLES_DES_PLATS[command]
 	prix_de_la_commande = commands_clients[command]
-	tooltip_text = command
+	tooltip_text = CLES_DES_PLATS[command]
 	match command:
 		"burger":
 			burger.show()

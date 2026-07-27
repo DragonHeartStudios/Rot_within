@@ -7,6 +7,6 @@
 texture_filter = 1
 offset_right = 43.0
 offset_bottom = 45.0
-tooltip_text = "Mixed salad"
+tooltip_text = "DISH_MIXED_SALAD"
 texture = ExtResource("1_3153k")
 script = ExtResource("2_0nw1y")
