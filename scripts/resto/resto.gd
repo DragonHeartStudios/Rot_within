@@ -8,6 +8,7 @@ extends Control
 @onready var clients: Control = $clients
 @onready var click_button_sound: AudioStreamPlayer = $start_service/click_button_sound
 @onready var upgrade: MarginContainer = %upgrade
+@onready var warning_peutpascook: Label = $cook/warning_peutpascook
 
 
 func _process(_delta: float) -> void:
@@ -31,7 +32,8 @@ func _ready() -> void:
 
 	await get_tree().process_frame
 	
-	fond_noire.show()
+	#fond_noire.show()
+	warning_peutpascook.hide()
 	start_service.show()
 	ui.visible = true
 	shop.visible = false
@@ -69,6 +71,7 @@ func _on_objet_mouse_exited(mat: ShaderMaterial) -> void:
 
 
 func _on_start_service_pressed() -> void:
+	warning_peutpascook.hide()
 	start_service.hide()
 	clients.max_clients = 3
 	click_button_sound.play()

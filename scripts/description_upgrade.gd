@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 	if hovered_panel:
 		titre_label.text = hovered_panel.titre
 		
-		description_label.text = "You will upgrade your %s from %d to %d" % [
+		description_label.text = "You will upgrade your %s from %.1f to %.1f" % [
 			hovered_panel.valeur_a_changer,
 			hovered_panel.value,
 			hovered_panel.get_next_value()

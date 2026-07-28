@@ -321,6 +321,22 @@ stream = SubResource("AudioStreamRandomizer_2b5yo")
 volume_db = -19.676
 pitch_scale = 1.51
 
+[node name="warning_peutpascook" type="Label" parent="cook" unique_id=34763185]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -234.35754
+offset_top = -67.089874
+offset_right = 30.642456
+offset_bottom = -18.089874
+grow_horizontal = 0
+rotation = 0.20943952
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Cannot cook outside service hours"
+horizontal_alignment = 1
+
 [node name="livre_recette" type="TextureRect" parent="." unique_id=1859955386]
 layout_mode = 1
 anchors_preset = 2
@@ -697,7 +713,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.6627451)
+color = Color(0, 0, 0, 0.8)
 
 [node name="start_service" type="Button" parent="." unique_id=900195510]
 layout_mode = 1
@@ -844,10 +860,10 @@ layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Tomato"
 theme = ExtResource("19_b0cgc")
-text = "+ 2.65$ "
+text = "+ 0,50$ "
 icon = ExtResource("5_3fn6y")
 script = ExtResource("11_xfph7")
-prix = 1.5
+prix = 0.5
 item_a_ajouter = ExtResource("6_glv1o")
 
 [node name="Button4" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/légumes" unique_id=1232014191]
@@ -855,10 +871,10 @@ layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Lettuce"
 theme = ExtResource("19_b0cgc")
-text = "+ 2.65$ "
+text = "+ 1,50$ "
 icon = ExtResource("24_n7uw1")
 script = ExtResource("11_xfph7")
-prix = 2.5
+prix = 1.5
 item_a_ajouter = ExtResource("11_b0cgc")
 
 [node name="Button7" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/légumes" unique_id=162557300]
@@ -866,10 +882,10 @@ layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Cucumber"
 theme = ExtResource("19_b0cgc")
-text = "+ 2.65$ "
+text = "+ 1,15$ "
 icon = ExtResource("27_vfwnw")
 script = ExtResource("11_xfph7")
-prix = 2.15
+prix = 1.15
 item_a_ajouter = ExtResource("12_011j2")
 
 [node name="produits_animaux" type="VBoxContainer" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=777519117]
@@ -897,7 +913,7 @@ layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Egg"
 theme = ExtResource("19_b0cgc")
-text = "+ 2.65$ "
+text = "+ 0,99$ "
 icon = ExtResource("22_vyomc")
 script = ExtResource("11_xfph7")
 prix = 0.99
@@ -908,10 +924,10 @@ layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Cheese"
 theme = ExtResource("19_b0cgc")
-text = "+ 2.65$ "
+text = "+ 1,30$ "
 icon = ExtResource("25_8bi4g")
 script = ExtResource("11_xfph7")
-prix = 2.3
+prix = 1.3
 item_a_ajouter = ExtResource("6_cegy2")
 
 [node name="Button8" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/produits_animaux" unique_id=858633622]
@@ -919,10 +935,10 @@ layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Cooked Patty"
 theme = ExtResource("19_b0cgc")
-text = "+ 2.65$ "
+text = "+ 2,50$ "
 icon = ExtResource("28_b8xja")
 script = ExtResource("11_xfph7")
-prix = 3.5
+prix = 2.5
 item_a_ajouter = ExtResource("9_s5hcb")
 
 [node name="pains" type="VBoxContainer" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=473093644]
@@ -950,10 +966,10 @@ layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Baguette"
 theme = ExtResource("19_b0cgc")
-text = "+ 2.65$ "
+text = "+ 1,00$ "
 icon = ExtResource("20_g64yn")
 script = ExtResource("11_xfph7")
-prix = 2.0
+prix = 1.0
 item_a_ajouter = ExtResource("13_s5hcb")
 
 [node name="Button6" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/pains" unique_id=208797990]
@@ -961,7 +977,7 @@ layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Buns"
 theme = ExtResource("19_b0cgc")
-text = "+ 2.65$ "
+text = "+ 1,50$ "
 icon = ExtResource("26_8kw7o")
 script = ExtResource("11_xfph7")
 prix = 1.5
@@ -1104,34 +1120,36 @@ theme_override_constants/separation = 20
 [node name="upgrade_energie" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=1013446982 instance=ExtResource("44_27jr1")]
 layout_mode = 2
 titre = "Energy Capacity +10%"
-valeur_a_lvl_zero = 100
-valeur_a_lvl_max = 150
+price = 90
+valeur_a_lvl_zero = 100.0
+valeur_a_lvl_max = 125.0
 valeur_a_changer = "max_energy"
 
 [node name="upgrade_order_speed" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=1228951149 instance=ExtResource("44_27jr1")]
 layout_mode = 2
 titre = "Orders stay 25% longer"
 image = ExtResource("48_rm5pp")
-price = 120
-valeur_a_lvl_zero = 10
-valeur_a_lvl_max = 25
+price = 60
+valeur_a_lvl_zero = 10.0
+valeur_a_lvl_max = 25.0
 valeur_a_changer = "order_speed"
 
 [node name="patiance_des_client" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=1296697997 instance=ExtResource("44_27jr1")]
 layout_mode = 2
 titre = "Patient Customers"
 image = ExtResource("49_qvexf")
-valeur_a_lvl_zero = 5
-valeur_a_lvl_max = 2
+price = 70
+valeur_a_lvl_zero = 3.0
+valeur_a_lvl_max = 1.5
 valeur_a_changer = "speed_customers"
 
 [node name="client_te_pay_plus" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=335944755 instance=ExtResource("44_27jr1")]
 layout_mode = 2
 titre = "Higher Tips"
 image = ExtResource("50_tb54x")
-price = 130
-valeur_a_lvl_zero = 0
-valeur_a_lvl_max = 10
+price = 85
+valeur_a_lvl_zero = 0.0
+valeur_a_lvl_max = 3.0
 valeur_a_changer = "tips"
 
 [node name="description_upgrade" type="PanelContainer" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=781378739 node_paths=PackedStringArray("panels")]
@@ -1151,7 +1169,6 @@ theme_override_constants/margin_bottom = 10
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 0
-text = "Plus 10% d'énergie"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1170,7 +1187,6 @@ custom_minimum_size = Vector2(210, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("52_mq5dp")
 theme_override_font_sizes/font_size = 13
-text = "vous allez passer la vitesse de caca de 5 a 8 kfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfd"
 autowrap_mode = 3
 
 [node name="HSeparator" type="HSeparator" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade/MarginContainer/description_Label" unique_id=623660882]
@@ -1213,8 +1229,4 @@ layout_mode = 1
 [connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/radioactife/Button9" to="shop/PanelContainer/MarginContainer/GridContainer/radioactife/Button9" method="_on_pressed"]
 [connection signal="pressed" from="shop/PanelContainer/MarginContainer/GridContainer/radioactife/Button11" to="shop/PanelContainer/MarginContainer/GridContainer/radioactife/Button11" method="_on_pressed"]
 [connection signal="pressed" from="shop/PanelContainer/MarginContainer/close" to="shop/PanelContainer/MarginContainer/close" method="_on_pressed"]
-[connection signal="focus_entered" from="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer/upgrade_energie" to="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade" method="_on_upgrade_energie_focus_entered"]
-[connection signal="focus_entered" from="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer/upgrade_order_speed" to="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade" method="_on_upgrade_order_speed_focus_entered"]
-[connection signal="focus_entered" from="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer/patiance_des_client" to="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade" method="_on_patiance_des_client_focus_entered"]
-[connection signal="focus_entered" from="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer/client_te_pay_plus" to="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade" method="_on_client_te_pay_plus_focus_entered"]
 [connection signal="pressed" from="upgrade/PanelContainer/MarginContainer/close" to="upgrade/PanelContainer/MarginContainer/close" method="_on_pressed"]

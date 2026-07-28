@@ -3,6 +3,9 @@ extends Button
 # Référence vers la grille de la planche
 @onready var planche_grid: GridContainer = $"../planche/PlancheGrid"
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var start_service: Button = $"../start_service"
+@onready var warning_peutpascook: Label = $warning_peutpascook
+
 
 # --- LE COIN DES RECETTES ---
 # Ingrédients TOUJOURS dans l'ordre alphabétique à gauche !
@@ -17,6 +20,10 @@ const RECETTES = {
 }
 
 func _on_pressed() -> void:
+	if start_service.visible:
+		_secouer_warning()
+		return
+	warning_peutpascook.hide()
 	var ingredients = planche_grid.get_children()
 	if ingredients.size() == 0:
 		print("La planche est vide !")
@@ -72,3 +79,26 @@ func _on_pressed() -> void:
 			
 	else:
 		print("Recette inconnue pour ces groupes : ", sur_la_planche)
+		
+		
+var tween_shake: Tween
+
+func _secouer_warning() -> void:
+	warning_peutpascook.show()
+	
+	if tween_shake:
+		tween_shake.kill()
+	
+	# On enregistre la position initiale pour être sûr de revenir au bon endroit
+	var pos_origine = warning_peutpascook.position
+	
+	tween_shake = create_tween()
+	var force = 8.0    # Intensité de la secousse (en pixels)
+	var vitesse = 0.03  # Vitesse de chaque coup (très rapide)
+	
+	# Aller-retour rapide de gauche à droite
+	tween_shake.tween_property(warning_peutpascook, "position:x", pos_origine.x - force, vitesse)
+	tween_shake.tween_property(warning_peutpascook, "position:x", pos_origine.x + force, vitesse)
+	tween_shake.tween_property(warning_peutpascook, "position:x", pos_origine.x - (force / 2.0), vitesse)
+	tween_shake.tween_property(warning_peutpascook, "position:x", pos_origine.x + (force / 2.0), vitesse)
+	tween_shake.tween_property(warning_peutpascook, "position:x", pos_origine.x, vitesse)

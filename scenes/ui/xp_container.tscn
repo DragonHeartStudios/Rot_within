@@ -60,5 +60,5 @@ stretch_mode = 5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1939941906]
 stream = SubResource("AudioStreamRandomizer_vfkdb")
-volume_db = -20.827
+volume_db = -24.328
 max_polyphony = 8

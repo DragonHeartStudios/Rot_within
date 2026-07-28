@@ -27,7 +27,7 @@ var salair_brute := 0.0
 var prix_des_ingredient := 0.0
 var client_pas_content := 0
 
-var dette := 500 #le montant de la dette
+var dette := 800 #le montant de la dette
 
 var honnetete := -10
 
@@ -53,7 +53,7 @@ var hight_score_mutant := 0.0
 
 var order_speed : float = 10
 
-var speed_customers : float = 5
+var speed_customers : float = 3.0
 
 var tips := 0
 

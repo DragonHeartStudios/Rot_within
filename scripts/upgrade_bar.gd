@@ -22,13 +22,13 @@ signal upgrade_applied(valeur_a_changer: String, new_value: int)
 @export var lvl_max : int = 5	
 
 @export_subgroup("valeur")
-@export var valeur_a_lvl_zero : int = 20
-@export var valeur_a_lvl_max : int = 50
+@export var valeur_a_lvl_zero : float = 20
+@export var valeur_a_lvl_max : float = 50
 
 #Le nom exact de la variable à modifier dans le GameManager (ex: "energie", "vitesse")
 @export var valeur_a_changer : String = "energie"
 
-var value : int = 0
+var value : float = 0
 var lvl : int = 0
 
 func _ready() -> void:
@@ -74,7 +74,7 @@ func _on_buy_pressed() -> void:
 	var ratio : float = float(lvl) / float(lvl_max)
 	
 	# On calcule la valeur entre le min et max selon ce ratio, et on repasse en entier (int)
-	value = int(lerp(float(valeur_a_lvl_zero), float(valeur_a_lvl_max), ratio))
+	value = lerp(float(valeur_a_lvl_zero), float(valeur_a_lvl_max), ratio)
 	
 	update_ui()
 	
@@ -90,10 +90,10 @@ func _on_buy_pressed() -> void:
 	upgrade_applied.emit(valeur_a_changer, value)
 	
 	
-func get_next_value() -> int:
+func get_next_value() -> float:
 	var next_lvl = min(lvl + 1, lvl_max)
 	var ratio = float(next_lvl) / float(lvl_max)
-	return int(lerp(float(valeur_a_lvl_zero), float(valeur_a_lvl_max), ratio))
+	return lerp(float(valeur_a_lvl_zero), float(valeur_a_lvl_max), ratio)
 
 #animation over
 @export var scale_hover: Vector2 = Vector2(1.05, 1.05) # +5% de taille

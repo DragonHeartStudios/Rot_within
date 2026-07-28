@@ -34,10 +34,10 @@ var type_actuel: TypeClient = TypeClient.NORMAL
 
 # --- LE COIN DES PRIX ---
 var commands_clients: Dictionary = {
-	"burger": 15,
-	"cheese omelette": 7.5,
-	"mixed salad": 11,
-	"sandwich": 13.5
+	"burger": 16.5,
+	"cheese omelette": 9,
+	"mixed salad": 12.5,
+	"sandwich": 15
 }
 
 var vitesse_timer: float
@@ -164,7 +164,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 				print("Aïe... Le plat servi était radioactif ! Compteur aujourd'hui : ", GameManager.plats_radioactifs_aujourd_hui)
 			
 			GameManager.argent += prix_de_la_commande
-			var xp_gagner = randi_range(8, 15)
+			var xp_gagner = randi_range(18, 25)
 			GameManager.xp += xp_gagner
 			GameManager.salair_brute += prix_de_la_commande + GameManager.tips
 			GameManager.energy -= GameManager.fatigue
