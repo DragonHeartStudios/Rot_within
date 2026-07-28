@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg3ull7785oa8"
-path="res://.godot/imported/perso léman.png-323eb677f90dd420532de8a6b43bc97a.ctex"
+uid="uid://yldhh3y22n1g"
+path="res://.godot/imported/perso4_mute.png-458627a96b8f78012cc6d11fb6dce24d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/perso léman.png"
-dest_files=["res://.godot/imported/perso léman.png-323eb677f90dd420532de8a6b43bc97a.ctex"]
+source_file="res://assets/sprites/resto/clients/mutant/perso4_mute.png"
+dest_files=["res://.godot/imported/perso4_mute.png-458627a96b8f78012cc6d11fb6dce24d.ctex"]
 
 [params]
 
@@ -34,7 +34,7 @@ process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
-process/hdr_as_srgb=true
+process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1

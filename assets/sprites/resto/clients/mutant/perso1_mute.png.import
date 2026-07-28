@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2qnewrxtihla"
-path="res://.godot/imported/preso1.png-2d36d33543a3ddc0eb522c3db1657815.ctex"
+uid="uid://c483r7jh1patj"
+path="res://.godot/imported/perso1_mute.png-56090a6270965506defccb07e9584471.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/preso1.png"
-dest_files=["res://.godot/imported/preso1.png-2d36d33543a3ddc0eb522c3db1657815.ctex"]
+source_file="res://assets/sprites/resto/clients/mutant/perso1_mute.png"
+dest_files=["res://.godot/imported/perso1_mute.png-56090a6270965506defccb07e9584471.ctex"]
 
 [params]
 

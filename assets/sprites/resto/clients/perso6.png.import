@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c483r7jh1patj"
-path="res://.godot/imported/moiii muté.png-fca4209cc2eedb3a5bd8980956f59d5d.ctex"
+uid="uid://bhfetcbqdp0q6"
+path="res://.godot/imported/perso6.png-f24bc8f41001d8216bf26b8f64b3c08d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/mutant/moiii muté.png"
-dest_files=["res://.godot/imported/moiii muté.png-fca4209cc2eedb3a5bd8980956f59d5d.ctex"]
+source_file="res://assets/sprites/resto/clients/perso6.png"
+dest_files=["res://.godot/imported/perso6.png-f24bc8f41001d8216bf26b8f64b3c08d.ctex"]
 
 [params]
 
@@ -34,7 +34,7 @@ process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
-process/hdr_as_srgb=false
+process/hdr_as_srgb=true
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1

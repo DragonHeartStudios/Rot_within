@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3s3fedxg7sbw"
-path="res://.godot/imported/perqo Zaly !.png-6b3d900aff23db6a58cb4433e690059b.ctex"
+uid="uid://bjgos41rq317j"
+path="res://.godot/imported/perso7_mute.png-93b3e552d3f9dc87c289113d0189ffd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/perqo Zaly !.png"
-dest_files=["res://.godot/imported/perqo Zaly !.png-6b3d900aff23db6a58cb4433e690059b.ctex"]
+source_file="res://assets/sprites/resto/clients/mutant/perso7_mute.png"
+dest_files=["res://.godot/imported/perso7_mute.png-93b3e552d3f9dc87c289113d0189ffd0.ctex"]
 
 [params]
 
@@ -34,7 +34,7 @@ process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
-process/hdr_as_srgb=true
+process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1

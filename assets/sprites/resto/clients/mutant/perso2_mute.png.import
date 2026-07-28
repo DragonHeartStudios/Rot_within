@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjojacc6ojqyy"
-path="res://.godot/imported/perso Zaly muté.png-70ebc1cb1a1b371baebc22fd9513ddd3.ctex"
+path="res://.godot/imported/perso2_mute.png-a9ce41a2ad7a9e9653fc06ba5efad4ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/mutant/perso Zaly muté.png"
-dest_files=["res://.godot/imported/perso Zaly muté.png-70ebc1cb1a1b371baebc22fd9513ddd3.ctex"]
+source_file="res://assets/sprites/resto/clients/mutant/perso2_mute.png"
+dest_files=["res://.godot/imported/perso2_mute.png-a9ce41a2ad7a9e9653fc06ba5efad4ca.ctex"]
 
 [params]
 
