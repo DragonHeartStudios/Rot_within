@@ -1011,7 +1011,6 @@ node = NodePath("../../..")
 
 [node name="upgrade" type="MarginContainer" parent="." unique_id=306970370]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1163,6 +1162,7 @@ script = ExtResource("22_ulrc0")
 node = NodePath("../../..")
 
 [node name="UI" parent="." unique_id=2136956030 instance=ExtResource("32_8kw7o")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="cook" to="cook" method="_on_pressed"]

@@ -28,6 +28,239 @@ const LANGUES := [
 # à l'autre, sinon l'affichage casse.
 const TEXTES := {
 
+#credits
+"CREDITS_TEXT": {
+		"fr": """[center]
+[font_size=40][b][color=#e74c3c]ROT WITHIN[/color][/b][/font_size]
+
+[color=#444444]════════════════════════════════════[/color]
+
+[font_size=20][color=#f39c12][b]— GAME DESIGN & PROGRAMMATION —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Développeur Principal & Game Designer[/color][/font_size]
+[font_size=22][b]ZALY[/b][/font_size]
+[font_size=22][b]METAZEUS[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— DIRECTION ARTISTIQUE —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Graphiste & DA[/color][/font_size]
+[font_size=22][b]MADAME LACOST[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— MUSIQUE & AUDIO —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Compositeur[/color][/font_size]
+[font_size=22][b]MELVIN[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— LOCALISATION & TRADUCTION —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Responsable Localisation[/color][/font_size]
+[font_size=22][b]OVAHÉ[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— MANAGEMENT —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Team Manager[/color][/font_size]
+[font_size=22][b]ZALY[/b][/font_size]
+
+
+[color=#444444]════════════════════════════════════[/color]
+
+[font_size=22][color=#f39c12][b]REMERCIEMENTS[/b][/color][/font_size]
+
+[font_size=16]Merci d'avoir joué à [b]Rot Within[/b] ![/font_size]
+[font_size=14][color=#aaaaaa]Un grand merci à la communauté et à nos testeurs.[/color][/font_size]
+
+[font_size=12][color=#666666]© 2026 Tous droits réservés.[/color][/font_size]
+[/center]""",
+
+		"en": """[center]
+[font_size=40][b][color=#e74c3c]ROT WITHIN[/color][/b][/font_size]
+
+[color=#444444]════════════════════════════════════[/color]
+
+[font_size=20][color=#f39c12][b]— GAME DESIGN & PROGRAMMING —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Lead Developer & Game Designer[/color][/font_size]
+[font_size=22][b]ZALY[/b][/font_size]
+[font_size=22][b]METAZEUS[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— ART DIRECTION —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Graphic Artist & Art Director[/color][/font_size]
+[font_size=22][b]MADAME LACOST[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— MUSIC & AUDIO —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Composer[/color][/font_size]
+[font_size=22][b]MELVIN[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— LOCALIZATION & TRANSLATION —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Localization Lead[/color][/font_size]
+[font_size=22][b]OVAHÉ[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— MANAGEMENT —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Team Manager[/color][/font_size]
+[font_size=22][b]ZALY[/b][/font_size]
+
+
+[color=#444444]════════════════════════════════════[/color]
+
+[font_size=22][color=#f39c12][b]ACKNOWLEDGEMENTS[/b][/color][/font_size]
+
+[font_size=16]Thanks for playing [b]Rot Within[/b]![/font_size]
+[font_size=14][color=#aaaaaa]A huge thanks to our community and playtesters.[/color][/font_size]
+
+[font_size=12][color=#666666]© 2026 All rights reserved.[/color][/font_size]
+[/center]""",
+
+		"es": """[center]
+[font_size=40][b][color=#e74c3c]ROT WITHIN[/color][/b][/font_size]
+
+[color=#444444]════════════════════════════════════[/color]
+
+[font_size=20][color=#f39c12][b]— DISEÑO DE JUEGO Y PROGRAMACIÓN —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Desarrollador Principal y Diseñador de Juego[/color][/font_size]
+[font_size=22][b]ZALY[/b][/font_size]
+[font_size=22][b]METAZEUS[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— DIRECCIÓN ARTÍSTICA —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Artista Gráfica y Directora Artística[/color][/font_size]
+[font_size=22][b]MADAME LACOST[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— MÚSICA Y AUDIO —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Compositor[/color][/font_size]
+[font_size=22][b]MELVIN[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— LOCALIZACIÓN Y TRADUCCIÓN —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Líder de Localización[/color][/font_size]
+[font_size=22][b]OVAHÉ[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— GESTIÓN —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Gerente de Equipo[/color][/font_size]
+[font_size=22][b]ZALY[/b][/font_size]
+
+
+[color=#444444]════════════════════════════════════[/color]
+
+[font_size=22][color=#f39c12][b]AGRADECIMIENTOS[/b][/color][/font_size]
+
+[font_size=16]¡Gracias por jugar a [b]Rot Within[/b]![/font_size]
+[font_size=14][color=#aaaaaa]Un gran agradecimiento a la comunidad y a nuestros probadores.[/color][/font_size]
+
+[font_size=12][color=#666666]© 2026 Todos los derechos reservados.[/color][/font_size]
+[/center]""",
+
+		"de": """[center]
+[font_size=40][b][color=#e74c3c]ROT WITHIN[/color][/b][/font_size]
+
+[color=#444444]════════════════════════════════════[/color]
+
+[font_size=20][color=#f39c12][b]— SPIELDESIGN & PROGRAMMIERUNG —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Hauptentwickler & Game Designer[/color][/font_size]
+[font_size=22][b]ZALY[/b][/font_size]
+[font_size=22][b]METAZEUS[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— KÜNSTLERISCHE LEITUNG —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Grafikerin & Art Director[/color][/font_size]
+[font_size=22][b]MADAME LACOST[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— MUSIK & AUDIO —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Komponist[/color][/font_size]
+[font_size=22][b]MELVIN[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— LOKALISIERUNG & ÜBERSETZUNG —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Leiter der Lokalisierung[/color][/font_size]
+[font_size=22][b]OVAHÉ[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— MANAGEMENT —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Teammanager[/color][/font_size]
+[font_size=22][b]ZALY[/b][/font_size]
+
+
+[color=#444444]════════════════════════════════════[/color]
+
+[font_size=22][color=#f39c12][b]DANKSAGUNG[/b][/color][/font_size]
+
+[font_size=16]Vielen Dank fürs Spielen von [b]Rot Within[/b]![/font_size]
+[font_size=14][color=#aaaaaa]Ein riesiges Dankeschön an die Community und unsere Spieletester.[/color][/font_size]
+
+[font_size=12][color=#666666]© 2026 Alle Rechte vorbehalten.[/color][/font_size]
+[/center]""",
+
+		"ru": """[center]
+[font_size=40][b][color=#e74c3c]ROT WITHIN[/color][/b][/font_size]
+
+[color=#444444]════════════════════════════════════[/color]
+
+[font_size=20][color=#f39c12][b]— ГЕЙМДИЗАЙН И ПРОГРАММИРОВАНИЕ —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Ведущий разработчик и геймдизайнер[/color][/font_size]
+[font_size=22][b]ZALY[/b][/font_size]
+[font_size=22][b]METAZEUS[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— ХУДОЖЕСТВЕННОЕ ОФОРМЛЕНИЕ —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Художник и арт-директор[/color][/font_size]
+[font_size=22][b]MADAME LACOST[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— МУЗЫКА И ЗВУК —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Композитор[/color][/font_size]
+[font_size=22][b]MELVIN[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— ЛОКАЛИЗАЦИЯ И ПЕРЕВОД —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Руководитель локализации[/color][/font_size]
+[font_size=22][b]OVAHÉ[/b][/font_size]
+
+
+[font_size=20][color=#f39c12][b]— МЕНЕДЖМЕНТ —[/b][/color][/font_size]
+
+[font_size=14][color=#aaaaaa]Менеджер команды[/color][/font_size]
+[font_size=22][b]ZALY[/b][/font_size]
+
+
+[color=#444444]════════════════════════════════════[/color]
+
+[font_size=22][color=#f39c12][b]БЛАГОДАРНОСТИ[/b][/color][/font_size]
+
+[font_size=16]Спасибо за игру в [b]Rot Within[/b]![/font_size]
+[font_size=14][color=#aaaaaa]Огромное спасибо сообществу и нашим тестировщикам.[/color][/font_size]
+
+[font_size=12][color=#666666]© 2026 Все права защищены.[/color][/font_size]
+[/center]"""
+},
+
 # --- MENU PRINCIPAL ---
 
 "MENU_START": {
@@ -44,12 +277,12 @@ const TEXTES := {
 	"de": "Sprache",
 	"ru": "Язык",
 },
-"MENU_CREDIT": {
-	"en": "Credit",
-	"fr": "Crédit",
-	"es": "Crédit",
-	"de": "Crédit",
-	"ru": "Crédit",
+"MENU_CREDITS": {
+	"en": "Credits",
+	"fr": "Crédits",
+	"es": "Créditos",
+	"de": "Impressum",
+	"ru": "Авторы",
 },
 # --- BOUTONS COMMUNS ---
 "UI_CLOSE": {

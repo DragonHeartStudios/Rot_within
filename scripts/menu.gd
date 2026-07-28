@@ -1,6 +1,8 @@
 extends Control
 
-@onready var langue: OptionButton = $langue
+@onready var langue: OptionButton = %langue
+@onready var credit_anim: AnimationPlayer = $credit_anim
+@onready var asp_swosh: AudioStreamPlayer = $ASP_swosh
 
 
 func _ready() -> void:
@@ -22,3 +24,13 @@ func _on_langue_item_selected(index: int) -> void:
 
 func _on_button_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/appartement.tscn")
+
+
+func _on_credits_pressed() -> void:
+	credit_anim.play("open")
+	asp_swosh.play()
+
+
+func _on_close_credits_pressed() -> void:
+	credit_anim.play_backwards("open")
+	asp_swosh.play()
