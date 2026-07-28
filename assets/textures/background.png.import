@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhfetcbqdp0q6"
-path="res://.godot/imported/perso ov.png-847c1035f248159fd7f5a9f7b3d9eaec.ctex"
+uid="uid://de7g6lo11ptre"
+path="res://.godot/imported/background.png-db55ec47224fbca7de3496d6823058f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/perso ov.png"
-dest_files=["res://.godot/imported/perso ov.png-847c1035f248159fd7f5a9f7b3d9eaec.ctex"]
+source_file="res://assets/textures/background.png"
+dest_files=["res://.godot/imported/background.png-db55ec47224fbca7de3496d6823058f9.ctex"]
 
 [params]
 
@@ -34,7 +34,7 @@ process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
-process/hdr_as_srgb=true
+process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1

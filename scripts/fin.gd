@@ -27,14 +27,14 @@ func _process(_delta: float) -> void:
 			couleur_argent = "red"
 		# On applique le BBCode pour l'argent
 
-		argent.text = "Money : [color=%s]%.2f $[/color]" % [couleur_argent, GameManager.argent]
+		argent.text = tr("END_MONEY_FORMAT") % [couleur_argent, GameManager.argent]
 
 		# --- GESTION DE LA COULEUR DE L'HONNÊTETÉ ---
 		var couleur_honnetete = "green"
 		if GameManager.honnetete < 0:
 			couleur_honnetete = "red"
 		# On applique le BBCode pour l'honnêteté
-		honnetete.text = str("Honestly : [color=", couleur_honnetete, "]", GameManager.honnetete, "[/color]")
+		honnetete.text = tr("END_HONESTY_FORMAT") % [couleur_honnetete, GameManager.honnetete]
 	
 		var end = GameManager.ending
 		# Variable pour stocker l'écran sélectionné

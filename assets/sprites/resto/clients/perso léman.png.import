@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hp5ssxuom257"
-path="res://.godot/imported/preso steven.png-c46f46e2cd8078d806de6680db96e7cc.ctex"
+uid="uid://bg3ull7785oa8"
+path="res://.godot/imported/perso léman.png-323eb677f90dd420532de8a6b43bc97a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/preso steven.png"
-dest_files=["res://.godot/imported/preso steven.png-c46f46e2cd8078d806de6680db96e7cc.ctex"]
+source_file="res://assets/sprites/resto/clients/perso léman.png"
+dest_files=["res://.godot/imported/perso léman.png-323eb677f90dd420532de8a6b43bc97a.ctex"]
 
 [params]
 

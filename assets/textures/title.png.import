@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1fpkqlfnqitx"
-path="res://.godot/imported/moiii.png-5d8a838aa5e3e344751110d18fe7c7ae.ctex"
+uid="uid://dwg6ilwg7j8j6"
+path="res://.godot/imported/title.png-81e99d3c910542a81dea8430ca7caf86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/moiii.png"
-dest_files=["res://.godot/imported/moiii.png-5d8a838aa5e3e344751110d18fe7c7ae.ctex"]
+source_file="res://assets/textures/title.png"
+dest_files=["res://.godot/imported/title.png-81e99d3c910542a81dea8430ca7caf86.ctex"]
 
 [params]
 
@@ -34,7 +34,7 @@ process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
-process/hdr_as_srgb=true
+process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1

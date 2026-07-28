@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2qnewrxtihla"
-path="res://.godot/imported/preso1.png-2d36d33543a3ddc0eb522c3db1657815.ctex"
+uid="uid://c483r7jh1patj"
+path="res://.godot/imported/moiii muté.png-fca4209cc2eedb3a5bd8980956f59d5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/preso1.png"
-dest_files=["res://.godot/imported/preso1.png-2d36d33543a3ddc0eb522c3db1657815.ctex"]
+source_file="res://assets/sprites/resto/clients/mutant/moiii muté.png"
+dest_files=["res://.godot/imported/moiii muté.png-fca4209cc2eedb3a5bd8980956f59d5d.ctex"]
 
 [params]
 

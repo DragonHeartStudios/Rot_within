@@ -16,7 +16,7 @@ func _ready() -> void:
 	lettre.pivot_offset = lettre.size / 2.0
 	
 	# On applique le texte de départ
-	rich_text_label.text = "[center]" + text1 + "[/center]"
+	rich_text_label.text = "[center]" + tr(text1) + "[/center]"
 
 func retourner_la_feuille() -> void:
 	var tween = create_tween()
@@ -30,11 +30,11 @@ func retourner_la_feuille() -> void:
 		est_sur_le_dos = not est_sur_le_dos
 		
 		if est_sur_le_dos:
-			rich_text_label.text = "[center]" + text2 + "[/center]"
+			rich_text_label.text = "[center]" + tr(text2) + "[/center]"
 			# On applique l'ombre uniquement sur l'image de la lettre
 			lettre.modulate = Color(0.85, 0.85, 0.85) 
 		else:
-			rich_text_label.text = "[center]" + text1 + "[/center]"
+			rich_text_label.text = "[center]" + tr(text1) + "[/center]"
 			lettre.modulate = Color.WHITE
 	)
 	

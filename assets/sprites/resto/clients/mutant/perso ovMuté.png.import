@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs3hnfst3ismv"
-path="res://.godot/imported/perso M3lv1n.png-247eeb7872a61d4c7f62382865ebd0c0.ctex"
+uid="uid://cnxx7nqqmin0j"
+path="res://.godot/imported/perso ovMuté.png-65fb2196f09dc56f971d8d11a688554b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/perso M3lv1n.png"
-dest_files=["res://.godot/imported/perso M3lv1n.png-247eeb7872a61d4c7f62382865ebd0c0.ctex"]
+source_file="res://assets/sprites/resto/clients/mutant/perso ovMuté.png"
+dest_files=["res://.godot/imported/perso ovMuté.png-65fb2196f09dc56f971d8d11a688554b.ctex"]
 
 [params]
 

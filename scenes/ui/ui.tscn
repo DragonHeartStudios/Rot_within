@@ -139,10 +139,10 @@ layout_mode = 2
 [node name="dettte" type="Label" parent="MarginContainer/header/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=137449746]
 layout_mode = 2
 size_flags_horizontal = 4
-tooltip_text = "Dept to be repaid"
+tooltip_text = "UI_TT_DEBT"
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 0, 1)
-text = "Dette 350/20.000 $"
+text = "0.00 $ / 0.00 $"
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/header/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=2116046111]
 layout_mode = 2
@@ -170,7 +170,7 @@ custom_minimum_size = Vector2(277.42, 23.655)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-tooltip_text = "Energy"
+tooltip_text = "UI_TT_ENERGY"
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("5_pfayw")
 theme_override_font_sizes/font_size = 11
@@ -199,15 +199,15 @@ vertical_alignment = 1
 [node name="jours" type="Label" parent="MarginContainer/header/MarginContainer/HBoxContainer" unique_id=170017726]
 layout_mode = 2
 size_flags_horizontal = 4
-tooltip_text = "days"
+tooltip_text = "UI_TT_DAYS"
 mouse_filter = 1
-text = "Days 7/30"
+text = "1/10"
 
 [node name="maps" type="Button" parent="MarginContainer/header/MarginContainer" unique_id=827002548]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-text = "maps"
+text = "UI_MAP"
 
 [node name="map" parent="." unique_id=671867917 instance=ExtResource("4_g5kmx")]
 visible = false
@@ -267,7 +267,7 @@ offset_right = 180.99998
 offset_bottom = 31.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 12
-text = "Choice of the day"
+text = "POPUP_TITLE"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="popup_chois/panel" unique_id=209520246]
@@ -291,7 +291,7 @@ theme_override_fonts/bold_italics_font = ExtResource("9_hl07w")
 theme_override_fonts/italics_font = ExtResource("10_swkix")
 theme_override_font_sizes/normal_font_size = 19
 bbcode_enabled = true
-text = "You have to make a choice right now"
+text = "POPUP_PROMPT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -336,8 +336,7 @@ theme_override_fonts/bold_font = ExtResource("5_pfayw")
 theme_override_fonts/bold_italics_font = ExtResource("9_hl07w")
 theme_override_fonts/italics_font = ExtResource("10_swkix")
 theme_override_font_sizes/normal_font_size = 44
-text = "You have finished your day.
-Congratulations !"
+text = "DAY_END_TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -354,7 +353,7 @@ offset_right = 71.25
 offset_bottom = 276.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "next"
+text = "UI_NEXT"
 
 [node name="confetti" parent="day_finiched" unique_id=575195268 instance=ExtResource("11_hc5d0")]
 position = Vector2(352, 316.99997)
@@ -385,12 +384,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=647568454]
 modulate = Color(0.7061666, 1, 0.59000003, 1)
 layout_mode = 2
-text = "Gross Salary"
+text = "RECEIPT_GROSS_SALARY"
 
 [node name="Label2" type="Label" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=696289351]
 modulate = Color(0.7061666, 1, 0.59000003, 1)
 layout_mode = 2
-text = "Savings"
+text = "RECEIPT_SAVINGS"
 
 [node name="HSeparator" type="HSeparator" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=175798490]
 layout_mode = 2
@@ -398,17 +397,17 @@ layout_mode = 2
 [node name="Label4" type="Label" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=1071331599]
 modulate = Color(1, 0.62, 0.62, 1)
 layout_mode = 2
-text = "Rent"
+text = "RECEIPT_RENT"
 
 [node name="Label5" type="Label" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=1507718388]
 modulate = Color(1, 0.62, 0.62, 1)
 layout_mode = 2
-text = "Ingredient Cost"
+text = "RECEIPT_INGREDIENTS"
 
 [node name="Label6" type="Label" parent="day_finiched/MarginContainer/VBoxContainer" unique_id=742912754]
 modulate = Color(1, 0.62, 0.62, 1)
 layout_mode = 2
-text = "Client Penalties"
+text = "RECEIPT_PENALTIES"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="day_finiched/MarginContainer" unique_id=686524088]
 layout_mode = 2
@@ -452,7 +451,7 @@ size_flags_vertical = 8
 theme_override_fonts/normal_font = ExtResource("13_hc5d0")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "Totale : 45.43€"
+text = "0.00 $"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -520,13 +519,13 @@ custom_minimum_size = Vector2(51.05, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "close"
+text = "UI_CLOSE"
 
 [node name="Label" type="Label" parent="aide_dormir/MarginContainer/Panel/MarginContainer" unique_id=1834540234]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "How to play"
+text = "HELP_TITLE"
 horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="aide_dormir/MarginContainer/Panel/MarginContainer" unique_id=516991002]
@@ -534,7 +533,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 bbcode_enabled = true
-text = "You are out of energy ! Go get some rest."
+text = "HELP_NO_ENERGY"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0

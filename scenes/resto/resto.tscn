@@ -308,7 +308,7 @@ offset_top = -77.28015
 offset_right = 17.839905
 offset_bottom = 44.560455
 rotation = -0.20977446
-tooltip_text = "Cook"
+tooltip_text = "RESTO_TT_COOK"
 theme_override_constants/icon_max_width = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tkm6v")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_16ylw")
@@ -365,7 +365,7 @@ offset_right = 25.0
 offset_bottom = 23.087997
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 21
-text = "book"
+text = "RECIPE_BOOK"
 horizontal_alignment = 1
 
 [node name="fleche_g" type="Button" parent="livre_recette" unique_id=1199744881]
@@ -414,26 +414,7 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("8_lxrh5")
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
-text = "[b][color=chocolate]BURGER:[/color][/b]
-[indent]• Buns
-• Cheese
-• Meat
-• Lettuce[/indent]
-
-[b][color=yellow]Cheese omelette:[/color][/b]
-[indent]• Cheese
-• Egg[/indent]
-
-[b][color=green]MIXED SALAD:[/color][/b]
-[indent]• Tomato
-• Lettuce
-• Cucumber[/indent]
-
-[b][color=burlywood]SANDWICH:[/color][/b]
-[indent]• Baguette
-• Cheese
-• Tomato
-• Lettuce[/indent]"
+text = "RECIPE_BOOK_TEXT"
 
 [node name="right_menu" type="VBoxContainer" parent="." unique_id=1459109157]
 layout_mode = 0
@@ -448,12 +429,27 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("5_n7uw1")
 
-[node name="Label" type="Label" parent="right_menu/frigo" unique_id=1235786995]
+[node name="VBoxContainer" type="VBoxContainer" parent="right_menu/frigo" unique_id=1115095923]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 17
-text = "Food"
+theme_override_constants/separation = -3
+
+[node name="Label" type="Label" parent="right_menu/frigo/VBoxContainer" unique_id=1235786995]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "FRIDGE_TITLE"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="tips" type="Label" parent="right_menu/frigo/VBoxContainer" unique_id=1667564364]
+custom_minimum_size = Vector2(40, 5)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+text = "RESTO_TIP_SHIFT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="right_menu/frigo" unique_id=1336149543]
 layout_mode = 2
@@ -601,15 +597,6 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_top = 113
 
-[node name="tips" type="Label" parent="right_menu/frigo" unique_id=1667564364]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 12
-text = "
-Shift + Left Click to move items quickly"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Panel" type="Panel" parent="right_menu" unique_id=407535654]
 custom_minimum_size = Vector2(0, 39.005)
 layout_mode = 2
@@ -638,7 +625,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.84705883, 0.9372549, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_vfwnw")
-text = "Open shop"
+text = "RESTO_OPEN_SHOP"
 script = ExtResource("15_g64yn")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="right_menu/Panel/HBoxContainer/MarginContainer/open_shop" unique_id=689474839]
@@ -661,7 +648,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.08235294, 1, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_vfwnw")
-text = "Upgrade"
+text = "RESTO_UPGRADE"
 script = ExtResource("20_rm5pp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="right_menu/Panel/HBoxContainer/MarginContainer2/open_upgrade" unique_id=1456312623]
@@ -698,7 +685,7 @@ offset_left = -34.0
 offset_right = 34.0
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "Trash"
+text = "RESTO_TRASH"
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Poubelle" unique_id=95615703]
@@ -731,7 +718,7 @@ grow_vertical = 2
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("37_tkm6v")
 theme_override_font_sizes/font_size = 25
-text = " Click to begin the service "
+text = "RESTO_START_SERVICE"
 
 [node name="click_button_sound" type="AudioStreamPlayer" parent="start_service" unique_id=1766723854]
 stream = ExtResource("38_16ylw")
@@ -762,7 +749,7 @@ theme_override_styles/panel = ExtResource("5_n7uw1")
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 27
-text = "Shop"
+text = "SHOP_TITLE"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="shop/PanelContainer" unique_id=549589018]
@@ -791,7 +778,7 @@ offset_top = -32.0
 offset_bottom = -2.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 21
-text = "book"
+text = "RECIPE_BOOK"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="shop/PanelContainer/MarginContainer/GridContainer/livre_recette" unique_id=1030110210]
@@ -814,26 +801,7 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("8_lxrh5")
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
-text = "[b][color=chocolate]BURGER:[/color][/b]
-[indent]• Buns
-• Cheese
-• Meat
-• Lettuce[/indent]
-
-[b][color=yellow]Cheese omelette:[/color][/b]
-[indent]• Cheese
-• Egg[/indent]
-
-[b][color=green]MIXED SALAD:[/color][/b]
-[indent]• Tomato
-• Lettuce
-• Cucumber[/indent]
-
-[b][color=burlywood]SANDWICH:[/color][/b]
-[indent]• Baguette
-• Cheese
-• Tomato
-• Lettuce[/indent]"
+text = "RECIPE_BOOK_TEXT"
 
 [node name="légumes" type="VBoxContainer" parent="shop/PanelContainer/MarginContainer/GridContainer" unique_id=1257506469]
 layout_mode = 2
@@ -842,7 +810,7 @@ theme_override_constants/separation = 16
 [node name="Label2" type="Label" parent="shop/PanelContainer/MarginContainer/GridContainer/légumes" unique_id=1039258175]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Vegetables"
+text = "SHOP_CAT_VEGETABLES"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="shop/PanelContainer/MarginContainer/GridContainer/légumes/Label2" unique_id=554083068]
@@ -858,7 +826,7 @@ grow_vertical = 0
 [node name="Button1" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/légumes" unique_id=2034036154]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Tomato"
+tooltip_text = "ING_TOMATO"
 theme = ExtResource("19_b0cgc")
 text = "+ 0,50$ "
 icon = ExtResource("5_3fn6y")
@@ -869,7 +837,7 @@ item_a_ajouter = ExtResource("6_glv1o")
 [node name="Button4" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/légumes" unique_id=1232014191]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Lettuce"
+tooltip_text = "ING_LETTUCE"
 theme = ExtResource("19_b0cgc")
 text = "+ 1,50$ "
 icon = ExtResource("24_n7uw1")
@@ -880,7 +848,7 @@ item_a_ajouter = ExtResource("11_b0cgc")
 [node name="Button7" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/légumes" unique_id=162557300]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Cucumber"
+tooltip_text = "ING_CUCUMBER"
 theme = ExtResource("19_b0cgc")
 text = "+ 1,15$ "
 icon = ExtResource("27_vfwnw")
@@ -895,7 +863,7 @@ theme_override_constants/separation = 16
 [node name="Label3" type="Label" parent="shop/PanelContainer/MarginContainer/GridContainer/produits_animaux" unique_id=329256593]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Animal products"
+text = "SHOP_CAT_ANIMAL"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="shop/PanelContainer/MarginContainer/GridContainer/produits_animaux/Label3" unique_id=647324806]
@@ -911,7 +879,7 @@ grow_vertical = 0
 [node name="Button2" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/produits_animaux" unique_id=547639145]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Egg"
+tooltip_text = "ING_EGG"
 theme = ExtResource("19_b0cgc")
 text = "+ 0,99$ "
 icon = ExtResource("22_vyomc")
@@ -922,7 +890,7 @@ item_a_ajouter = ExtResource("8_011j2")
 [node name="Button5" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/produits_animaux" unique_id=2076212849]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Cheese"
+tooltip_text = "ING_CHEESE"
 theme = ExtResource("19_b0cgc")
 text = "+ 1,30$ "
 icon = ExtResource("25_8bi4g")
@@ -933,7 +901,7 @@ item_a_ajouter = ExtResource("6_cegy2")
 [node name="Button8" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/produits_animaux" unique_id=858633622]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Cooked Patty"
+tooltip_text = "ING_COOKED_PATTY"
 theme = ExtResource("19_b0cgc")
 text = "+ 2,50$ "
 icon = ExtResource("28_b8xja")
@@ -948,7 +916,7 @@ theme_override_constants/separation = 16
 [node name="Label" type="Label" parent="shop/PanelContainer/MarginContainer/GridContainer/pains" unique_id=970591731]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Breads"
+text = "SHOP_CAT_BREADS"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="shop/PanelContainer/MarginContainer/GridContainer/pains/Label" unique_id=805267490]
@@ -964,7 +932,7 @@ grow_vertical = 0
 [node name="Button3" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/pains" unique_id=432417873]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Baguette"
+tooltip_text = "ING_BAGUETTE"
 theme = ExtResource("19_b0cgc")
 text = "+ 1,00$ "
 icon = ExtResource("20_g64yn")
@@ -975,7 +943,7 @@ item_a_ajouter = ExtResource("13_s5hcb")
 [node name="Button6" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/pains" unique_id=208797990]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Buns"
+tooltip_text = "ING_BUNS"
 theme = ExtResource("19_b0cgc")
 text = "+ 1,50$ "
 icon = ExtResource("26_8kw7o")
@@ -992,7 +960,7 @@ theme_override_constants/separation = 16
 modulate = Color(0.9, 1, 0, 1)
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Radioactive"
+text = "SHOP_CAT_RADIOACTIVE"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="shop/PanelContainer/MarginContainer/GridContainer/radioactife/Label4" unique_id=435574313]
@@ -1008,7 +976,7 @@ grow_vertical = 0
 [node name="Button10" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/radioactife" unique_id=246723962]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Radioactive Cooked Patty"
+tooltip_text = "ING_RADIOACTIVE_PATTY"
 theme = ExtResource("19_b0cgc")
 text = "+ 2.65$ "
 icon = ExtResource("34_tkm6v")
@@ -1020,7 +988,7 @@ radioactive = true
 [node name="Button9" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/radioactife" unique_id=578203267]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Radioactive Tomato"
+tooltip_text = "ING_RADIOACTIVE_TOMATO"
 theme = ExtResource("19_b0cgc")
 text = "+ 2.65$ "
 icon = ExtResource("5_3fn6y")
@@ -1032,7 +1000,7 @@ radioactive = true
 [node name="Button11" type="Button" parent="shop/PanelContainer/MarginContainer/GridContainer/radioactife" unique_id=1352177861]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Radioactive Egg"
+tooltip_text = "ING_RADIOACTIVE_EGG"
 theme = ExtResource("19_b0cgc")
 text = "+ 2.65$ "
 icon = ExtResource("22_vyomc")
@@ -1053,7 +1021,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 theme = ExtResource("19_b0cgc")
 theme_override_constants/align_to_largest_stylebox = 1
-text = "close"
+text = "UI_CLOSE"
 script = ExtResource("22_ulrc0")
 node = NodePath("../../..")
 
@@ -1081,7 +1049,7 @@ theme_override_styles/panel = ExtResource("5_n7uw1")
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 27
-text = "Upgrade"
+text = "RESTO_UPGRADE"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="upgrade/PanelContainer" unique_id=861666219]
@@ -1123,11 +1091,13 @@ titre = "Energy Capacity +10%"
 price = 90
 valeur_a_lvl_zero = 100.0
 valeur_a_lvl_max = 125.0
+valeur_a_lvl_zero = 100
+valeur_a_lvl_max = 150
 valeur_a_changer = "max_energy"
 
 [node name="upgrade_order_speed" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=1228951149 instance=ExtResource("44_27jr1")]
 layout_mode = 2
-titre = "Orders stay 25% longer"
+titre = "UPGRADE_ORDER_SPEED"
 image = ExtResource("48_rm5pp")
 price = 60
 valeur_a_lvl_zero = 10.0
@@ -1136,7 +1106,7 @@ valeur_a_changer = "order_speed"
 
 [node name="patiance_des_client" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=1296697997 instance=ExtResource("44_27jr1")]
 layout_mode = 2
-titre = "Patient Customers"
+titre = "UPGRADE_PATIENCE"
 image = ExtResource("49_qvexf")
 price = 70
 valeur_a_lvl_zero = 3.0
@@ -1145,7 +1115,7 @@ valeur_a_changer = "speed_customers"
 
 [node name="client_te_pay_plus" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/upgradContainer/VBoxContainer" unique_id=335944755 instance=ExtResource("44_27jr1")]
 layout_mode = 2
-titre = "Higher Tips"
+titre = "UPGRADE_TIPS"
 image = ExtResource("50_tb54x")
 price = 85
 valeur_a_lvl_zero = 0.0
@@ -1169,6 +1139,7 @@ theme_override_constants/margin_bottom = 10
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 0
+text = "RESTO_UPGRADE"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1187,6 +1158,7 @@ custom_minimum_size = Vector2(210, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("52_mq5dp")
 theme_override_font_sizes/font_size = 13
+text = "UPGRADE_HINT"
 autowrap_mode = 3
 
 [node name="HSeparator" type="HSeparator" parent="upgrade/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/description_upgrade/MarginContainer/description_Label" unique_id=623660882]
@@ -1206,11 +1178,12 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 theme = ExtResource("19_b0cgc")
 theme_override_constants/align_to_largest_stylebox = 1
-text = "close"
+text = "UI_CLOSE"
 script = ExtResource("22_ulrc0")
 node = NodePath("../../..")
 
 [node name="UI" parent="." unique_id=2136956030 instance=ExtResource("32_8kw7o")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="cook" to="cook" method="_on_pressed"]

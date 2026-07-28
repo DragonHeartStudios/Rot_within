@@ -42,7 +42,7 @@ stream_0/stream = ExtResource("4_e7tg4")
 custom_minimum_size = Vector2(481.365, 50.985)
 theme_override_styles/panel = ExtResource("1_bwxl3")
 script = ExtResource("2_e7tg4")
-titre = "plus 10% d'énergie"
+titre = "UPGRADE_ENERGY"
 image = ExtResource("2_a0fxn")
 
 [node name="titre_Label" type="Label" parent="." unique_id=1218746598]
@@ -56,7 +56,7 @@ offset_right = 74.5
 offset_bottom = 10.0
 grow_horizontal = 2
 size_flags_horizontal = 3
-text = "plus 10% d'énergie"
+text = "UPGRADE_ENERGY"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=3160766]
 layout_mode = 1
@@ -104,7 +104,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-text = "LVL 3/5"
+text = "0/5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -112,7 +112,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 0.63, 0.63, 0.9019608)
-text = "-350 XP"
+text = "-100 XP"
 horizontal_alignment = 2
 
 [node name="buy" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1912222836]
@@ -120,7 +120,7 @@ layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 mouse_filter = 1
-text = "upgrade"
+text = "UPGRADE_BUY"
 
 [node name="upgrade_sound" type="AudioStreamPlayer" parent="." unique_id=745793542]
 stream = SubResource("AudioStreamRandomizer_f2kbl")

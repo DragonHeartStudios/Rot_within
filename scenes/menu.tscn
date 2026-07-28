@@ -1,8 +1,142 @@
 [gd_scene format=3 uid="uid://vqfuv5ljitp3"]
 
 [ext_resource type="Script" uid="uid://ce161iedrks2e" path="res://scripts/menu.gd" id="1_vjb58"]
-[ext_resource type="Texture2D" uid="uid://cjas5yjqp40lw" path="res://assets/textures/affiche_rw.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://de7g6lo11ptre" path="res://assets/textures/background.png" id="2_g3eks"]
+[ext_resource type="AudioStream" uid="uid://335bpp5h3tka" path="res://assets/audio/sfx/3. Whoosh Swoosh Sound Effect ( By Ashish Editz ) .wav" id="2_v86rl"]
 [ext_resource type="FontFile" uid="uid://dn6qoun2p3dej" path="res://resources/fonts/static/Nunito-Light.ttf" id="3_con2f"]
+[ext_resource type="Theme" uid="uid://dvc1dki2baxnc" path="res://resources/themes/globale.tres" id="4_lgsel"]
+[ext_resource type="Texture2D" uid="uid://dwg6ilwg7j8j6" path="res://assets/textures/title.png" id="5_v86rl"]
+[ext_resource type="StyleBox" uid="uid://d2ean8r6b5gf1" path="res://resources/themes/panel_box_flat.tres" id="6_13sgg"]
+
+[sub_resource type="Animation" id="Animation_con2f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main/Button_play:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mhnvy"]
+resource_name = "new_animation"
+length = 1.8
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main/Button_play:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ytvr"]
+_data = {
+&"RESET": SubResource("Animation_con2f"),
+&"new_animation": SubResource("Animation_mhnvy")
+}
+
+[sub_resource type="Animation" id="Animation_i6lef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../main:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../credits:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../credits:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.71, 1.71)]
+}
+
+[sub_resource type="Animation" id="Animation_70i5f"]
+resource_name = "open"
+length = 0.5
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../main:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.33, 0.33)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../credits:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.23333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../credits:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.235664, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.71, 1.71), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mj5lg"]
+_data = {
+&"RESET": SubResource("Animation_i6lef"),
+&"open": SubResource("Animation_70i5f")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2qkkm"]
+random_pitch = 1.0772974
+streams_count = 1
+stream_0/stream = ExtResource("2_v86rl")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhnvy"]
 
@@ -28,43 +162,42 @@ expand_margin_right = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13sgg"]
 
-[sub_resource type="Animation" id="Animation_con2f"]
+[sub_resource type="Animation" id="Animation_v86rl"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Button_play:modulate")
+tracks/0/path = NodePath("TextureRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_mhnvy"]
+[sub_resource type="Animation" id="Animation_13sgg"]
 resource_name = "new_animation"
-length = 1.8
-loop_mode = 1
+loop_mode = 2
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Button_play:modulate")
+tracks/0/path = NodePath("TextureRect:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.43333334, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(0, 0), Vector2(0, -3.66)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ytvr"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i6lef"]
 _data = {
-&"RESET": SubResource("Animation_con2f"),
-&"new_animation": SubResource("Animation_mhnvy")
+&"RESET": SubResource("Animation_v86rl"),
+&"new_animation": SubResource("Animation_13sgg")
 }
 
 [node name="Menu" type="Control" unique_id=543286447]
@@ -76,6 +209,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vjb58")
 
+[node name="btmplay_anim" type="AnimationPlayer" parent="." unique_id=1524519779]
+libraries/ = SubResource("AnimationLibrary_4ytvr")
+autoplay = &"new_animation"
+
+[node name="credit_anim" type="AnimationPlayer" parent="." unique_id=286646675]
+root_node = NodePath("../btmplay_anim")
+libraries/ = SubResource("AnimationLibrary_mj5lg")
+
+[node name="ASP_swosh" type="AudioStreamPlayer" parent="." unique_id=395146715]
+stream = SubResource("AudioStreamRandomizer_2qkkm")
+volume_db = -14.366
+pitch_scale = 0.48
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1960686630]
 layout_mode = 1
 anchors_preset = 15
@@ -83,11 +229,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_yqeox")
+mouse_filter = 2
+texture = ExtResource("2_g3eks")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button_play" type="Button" parent="." unique_id=2100816562]
+[node name="main" type="Control" parent="." unique_id=459593825]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="main" unique_id=1585354173]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_v86rl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button_play" type="Button" parent="main" unique_id=2100816562]
 custom_minimum_size = Vector2(317.08, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -96,9 +265,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -210.0
-offset_top = 207.0
+offset_top = 119.0
 offset_right = 210.0
-offset_bottom = 275.0
+offset_bottom = 187.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_con2f")
@@ -108,10 +277,105 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_mhnvy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_con2f")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_v86rl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_13sgg")
-text = "Presse here to start"
+text = "MENU_START"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1524519779]
-libraries/ = SubResource("AnimationLibrary_4ytvr")
+[node name="langue" type="OptionButton" parent="main" unique_id=1147200631]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = -60.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "MENU_LANGUAGE"
+theme = ExtResource("4_lgsel")
+theme_override_font_sizes/font_size = 18
+
+[node name="credits" type="Button" parent="main" unique_id=788835512]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -60.0
+offset_right = 157.0
+offset_bottom = -32.0
+grow_vertical = 0
+theme = ExtResource("4_lgsel")
+text = "MENU_CREDITS"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="main" unique_id=1787567380]
+libraries/ = SubResource("AnimationLibrary_i6lef")
 autoplay = &"new_animation"
 
-[connection signal="pressed" from="Button_play" to="." method="_on_button_play_pressed"]
+[node name="credits" type="Control" parent="." unique_id=2132692548]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.71, 1.71)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="credits" unique_id=1358816307]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="credits/MarginContainer" unique_id=1804827416]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("6_13sgg")
+
+[node name="titre" type="Label" parent="credits/MarginContainer/PanelContainer" unique_id=921874239]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 19
+text = "MENU_CREDITS"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="credits/MarginContainer/PanelContainer" unique_id=564733580]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="close" type="Button" parent="credits/MarginContainer/PanelContainer/MarginContainer" unique_id=1538338706]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("4_lgsel")
+theme_override_constants/align_to_largest_stylebox = 1
+text = "UI_CLOSE"
+
+[node name="credit_label" type="RichTextLabel" parent="credits/MarginContainer/PanelContainer/MarginContainer" unique_id=1730584744]
+custom_minimum_size = Vector2(800, 0)
+custom_maximum_size = Vector2(800, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+bbcode_enabled = true
+text = "CREDITS_TEXT"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="main/Button_play" to="." method="_on_button_play_pressed"]
+[connection signal="item_selected" from="main/langue" to="." method="_on_langue_item_selected"]
+[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="credits/MarginContainer/PanelContainer/MarginContainer/close" to="." method="_on_close_credits_pressed"]

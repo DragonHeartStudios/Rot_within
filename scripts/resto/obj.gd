@@ -7,6 +7,38 @@ const OUTLINE_SHADER = preload("res://resources/shaders/outline2D_outer.gdshader
 # Variable pour stocker le matériau unique de cet objet
 var shader_material : ShaderMaterial
 
+# Le nom affiché dans l'infobulle vient du groupe de l'objet. Comme le groupe
+# est un identifiant interne (il sert aussi aux recettes), on le convertit ici
+# en clé de traduction au lieu de l'afficher tel quel.
+const CLES_DES_OBJETS := {
+	"Tomato": "ING_TOMATO",
+	"Lettuce": "ING_LETTUCE",
+	"Cucumber": "ING_CUCUMBER",
+	"Egg": "ING_EGG",
+	"Cheese": "ING_CHEESE",
+	"Raw Patty": "ING_RAW_PATTY",
+	"Cooked Patty": "ING_COOKED_PATTY",
+	"baguette": "ING_BAGUETTE",
+	"Buns": "ING_BUNS",
+	"Burger": "DISH_BURGER",
+	"Cheese omelette": "DISH_CHEESE_OMELETTE",
+	"Mixed salad": "DISH_MIXED_SALAD",
+	"sandwich": "DISH_SANDWICH",
+}
+
+# Version radioactive. On ne colle pas un simple préfixe "Radioactive " devant :
+# l'adjectif s'accorde en genre dans plusieurs langues (tomate radioactivE mais
+# œuf radioactiF), donc chaque variante a sa propre clé.
+const CLES_DES_OBJETS_RADIOACTIFS := {
+	"Tomato": "ING_RADIOACTIVE_TOMATO",
+	"Egg": "ING_RADIOACTIVE_EGG",
+	"Cooked Patty": "ING_RADIOACTIVE_PATTY",
+	"Burger": "DISH_RADIOACTIVE_BURGER",
+	"Cheese omelette": "DISH_RADIOACTIVE_CHEESE_OMELETTE",
+	"Mixed salad": "DISH_RADIOACTIVE_MIXED_SALAD",
+	"sandwich": "DISH_RADIOACTIVE_SANDWICH",
+}
+
 func _ready() -> void:
 	# 2. ON CRÉE LE MATÉRIAU PAR CODE
 	shader_material = ShaderMaterial.new()
@@ -29,11 +61,15 @@ func _ready() -> void:
 			nom = group
 			break
 	
+	var table = CLES_DES_OBJETS_RADIOACTIFS if is_radioactive else CLES_DES_OBJETS
+	# Si le groupe n'est pas répertorié, on retombe sur son nom brut : la teinte
+	# verte suffit déjà à signaler qu'un objet est radioactif.
+	var cle = table.get(nom, CLES_DES_OBJETS.get(nom, ""))
+
 	if is_radioactive:
 		modulate = Color(0.562, 0.828, 0.0, 1.0)
-		tooltip_text = "Radioactive " + nom
-	else:
-		tooltip_text = nom
+
+	tooltip_text = tr(cle) if cle != "" else str(nom)
 
 # Cette fonction se déclenche automatiquement quand on commence à glisser l'objet
 func _get_drag_data(_at_position: Vector2) -> Variant:

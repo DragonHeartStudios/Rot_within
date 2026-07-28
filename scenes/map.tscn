@@ -35,7 +35,7 @@ offset_right = 1017.0
 offset_bottom = 569.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "close"
+text = "UI_CLOSE"
 
 [node name="appartement" type="Button" parent="." unique_id=531169152]
 layout_mode = 0
@@ -45,7 +45,7 @@ offset_right = 915.0
 offset_bottom = 295.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "Appartment"
+text = "MAP_APARTMENT"
 
 [node name="resto" type="Button" parent="." unique_id=2118787605]
 layout_mode = 0
@@ -55,7 +55,7 @@ offset_right = 274.0
 offset_bottom = 230.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "Restaurant"
+text = "MAP_RESTAURANT"
 
 [connection signal="pressed" from="close_map" to="." method="_on_close_map_pressed"]
 [connection signal="pressed" from="appartement" to="." method="_on_appartement_pressed"]

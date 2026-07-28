@@ -16,28 +16,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("2_o0057")
-text1 = "[b]Mr. Decker,[/b]
-
-We are pleased to inform you that you have been hired as a cook at [b]Spudsy’s[/b].
-
-Your application caught our attention and impressed our management. Our director has also left you a personal note on the back of this letter regarding your new position.
-
-Have a nice day."
-text2 = "I recognized you, you little [s]bastard[/s].
-
-Decker...
-
-After [color=yellow][b]8 YEARS[/b][/color] you really thought I would've forgotten the scam you pulled on my family?
-[shake rate=20 level=10][color=red][b]NO.[/b][/color][/shake]
-And I fully intend to make you pay for everything you made me lose.
-Even if I would've preferred seeing your head on the floor of my garage as compensation...
-I'll be merciful.
-[b]Work for me.[/b]
-[b]Pay back your debt.[/b]
-If you repay it fast enough...
-Maybe I'll reconsider the idea of putting you down like a sick dog.
-[pulse freq=2.0 color=#ff0000][b]8:00 AM.[/b][/pulse]
-[wave amp=40 freq=8][color=red][b]DON'T BE LATE.[/b][/color][/wave]"
+text1 = "LETTER_FRONT"
+text2 = "LETTER_BACK"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1256478241]
 layout_mode = 1
@@ -79,10 +59,7 @@ grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
-text = "Mr Decker,
- Je suis heureux de vous informer que nous vous embauchons en tant que cuisinez chez Spudsy’s.
- Votre dossier nous a fait de l'œil et à attirer l’attention de notre dirigeant, qui vous a laissé un mot au dos de cette lettre pour vous féliciter de votre nouveaux postes
-Bonne journée,"
+text = "LETTER_FRONT"
 fit_content = true
 scroll_active = false
 
@@ -97,7 +74,7 @@ offset_left = -102.304016
 offset_top = -78.768005
 offset_right = -70.304016
 offset_bottom = -41.768005
-tooltip_text = "Flip the paper"
+tooltip_text = "LETTER_TT_FLIP"
 theme = ExtResource("3_3u2ip")
 icon = ExtResource("4_i4de3")
 
@@ -115,7 +92,7 @@ offset_bottom = -32.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("3_3u2ip")
-text = "close"
+text = "UI_CLOSE"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=785630886]
 stream = ExtResource("5_5fb1j")

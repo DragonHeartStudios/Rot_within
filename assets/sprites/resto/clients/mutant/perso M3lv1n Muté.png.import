@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x7fa3o3mjod8"
-path="res://.godot/imported/zombie_PNG42.png-21967aa4fab7431a6b05eb0b2e39eeaa.ctex"
+uid="uid://yldhh3y22n1g"
+path="res://.godot/imported/perso M3lv1n Muté.png-1380236447abd6b2569bf3ef88270f8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/resto/clients/zombie_PNG42.png"
-dest_files=["res://.godot/imported/zombie_PNG42.png-21967aa4fab7431a6b05eb0b2e39eeaa.ctex"]
+source_file="res://assets/sprites/resto/clients/mutant/perso M3lv1n Muté.png"
+dest_files=["res://.godot/imported/perso M3lv1n Muté.png-1380236447abd6b2569bf3ef88270f8f.ctex"]
 
 [params]
 
