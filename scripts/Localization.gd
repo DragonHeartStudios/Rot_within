@@ -720,6 +720,14 @@ const TEXTES := {
 },
 
 # --- RESTAURANT ---
+"COOK_WARNING": {
+	"en": "Cannot cook outside service hours",
+	"fr": "Impossible de cuisiner en dehors des heures de service",
+	"es": "No se puede cocinar fuera del horario de servicio",
+	"de": "Kochen außerhalb der Servicezeiten nicht möglich",
+	"ru": "Нельзя готовить вне часов работы"
+},
+
 "RESTO_TT_COOK": {
 	"en": "Cook",
 	"fr": "Cuisiner",

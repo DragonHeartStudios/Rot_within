@@ -322,20 +322,20 @@ volume_db = -19.676
 pitch_scale = 1.51
 
 [node name="warning_peutpascook" type="Label" parent="cook" unique_id=34763185]
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -234.35754
-offset_top = -67.089874
-offset_right = 30.642456
-offset_bottom = -18.089874
+offset_left = -318.43054
+offset_top = -84.960144
+offset_right = 139.12823
+offset_bottom = -35.960144
 grow_horizontal = 0
 rotation = 0.20943952
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-text = "Cannot cook outside service hours"
+text = "COOK_WARNING"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="livre_recette" type="TextureRect" parent="." unique_id=1859955386]
 layout_mode = 1
@@ -1027,6 +1027,7 @@ node = NodePath("../../..")
 
 [node name="upgrade" type="MarginContainer" parent="." unique_id=306970370]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1089,8 +1090,6 @@ theme_override_constants/separation = 20
 layout_mode = 2
 titre = "Energy Capacity +10%"
 price = 90
-valeur_a_lvl_zero = 100.0
-valeur_a_lvl_max = 125.0
 valeur_a_lvl_zero = 100
 valeur_a_lvl_max = 150
 valeur_a_changer = "max_energy"
