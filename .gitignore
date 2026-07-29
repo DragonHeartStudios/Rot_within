@@ -1,4 +1,14 @@
 # Godot 4+ specific ignores
 .godot/
+.import/
 *.tmp
 *.log
+
+# Tes dossiers personnels d'export et builds
+Export/
+builds/
+deploy.bat
+
+# Fichiers système (très utile pour éviter les .DS_Store sur Mac)
+.DS_Store
+Thumbs.db
